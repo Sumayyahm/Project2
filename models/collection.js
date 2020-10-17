@@ -1,18 +1,14 @@
 module.exports = function(sequelize, Datatypes) {
 
-var Collection = sequelize.define("collection", {
-    collection_name: {
+var Style = sequelize.define("style", {
+    style_name: {
         type: Datatypes.STRING,
         notNull: true,
         len: [1, 60]
     },
-    collection_description: {
+    style_description: {
         type: Datatypes.TEXT,
         max: 200
-    },
-    num_pieces: {
-        type: Datatypes.INTEGER,
-        notNull: true,
     }
 }, 
 
@@ -20,8 +16,8 @@ var Collection = sequelize.define("collection", {
     freezeTableName: true
 });
 
-Collection.associate = function(models) {
-    Collection.hasOne(models.Artist, {
+Style.associate = function(models) {
+    Collection.hasOne(models.Artwork, {
         onDelete: "cascade"
     });
 };

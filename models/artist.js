@@ -20,6 +20,10 @@ var Artist = sequelize.define("artist", {
     artist_bio: {
         type: Datatypes.TEXT,
         max: 200
+    },
+    artist_portrait: {
+        type: Datatypes.STRING,
+        isURL: true
     }
 }, 
 
