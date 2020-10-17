@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
-    
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
+
     <title>Esthete Gallery</title>
+
+
 </head>
+
 <body>
     <div uk-sticky=" cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar" class="nav">
         <nav class="uk-navbar" uk-navbar>
@@ -36,86 +43,50 @@
                     <li><a href="#">ABOUT</a></li>
                     <li><a href="login.html">LOGIN</a></li>
                 </ul>
-        
+
             </div>
         </nav>
         <img src="esthete.JPG" class="galleryname">
     </div>
     <div>
-        <div class="js-upload uk-placeholder uk-text-center">
-            <span uk-icon="icon: cloud-upload"></span>
-            <span class="uk-text-middle">Attach binaries by dropping them here or</span>
-            <div uk-form-custom>
-                <input type="file" multiple>
-                <span class="uk-link">selecting one</span>
-            </div>
+        <div class="uk-placeholder uk-text-center">
+            <span class="uk-text-middle">Upload images of artwork by clicking</span>
+            <button id="upload_widget" class="cloudinary-button">here</button>
         </div>
-        
-        <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
     </div>
-    
-    <script>
-    
-        var bar = document.getElementById('js-progressbar');
-    
-        UIkit.upload('.js-upload', {
-    
-            url: '',
-            multiple: true,
-    
-            beforeSend: function () {
-                console.log('beforeSend', arguments);
-            },
-            beforeAll: function () {
-                console.log('beforeAll', arguments);
-            },
-            load: function () {
-                console.log('load', arguments);
-            },
-            error: function () {
-                console.log('error', arguments);
-            },
-            complete: function () {
-                console.log('complete', arguments);
-            },
-    
-            loadStart: function (e) {
-                console.log('loadStart', arguments);
-    
-                bar.removeAttribute('hidden');
-                bar.max = e.total;
-                bar.value = e.loaded;
-            },
-    
-            progress: function (e) {
-                console.log('progress', arguments);
-    
-                bar.max = e.total;
-                bar.value = e.loaded;
-            },
-    
-            loadEnd: function (e) {
-                console.log('loadEnd', arguments);
-    
-                bar.max = e.total;
-                bar.value = e.loaded;
-            },
-    
-            completeAll: function () {
-                console.log('completeAll', arguments);
-    
-                setTimeout(function () {
-                    bar.setAttribute('hidden', 'hidden');
-                }, 1000);
-    
-                alert('Upload Completed');
-            }
-    
-        });
-    
-    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
-    
+
+    <script type="text/javascript">
+        var myWidget = cloudinary.createUploadWidget({
+            cloudName: 'esthete',
+            uploadPreset: 'preset123'
+        }, (error, result) => {
+            if (!error && result && result.event === "success") {
+                console.log('Done! Here is the image info: ', result.info);
+
+                var newSavedImg = {
+                    imgUrl: result.info.url,
+                    publicId: result.info.public_id
+                }
+                console.log(newSavedImg)
+
+                $.post("/api/artwork", newSavedImg)
+                    .then(function (data) {
+                        console.log("add.html", data);
+                        alert("Adding character...");
+                    });
+            };
+        }
+
+        )
+
+        document.getElementById("upload_widget").addEventListener("click", function () {
+            myWidget.open();
+        }, false);
+    </script>
+
 </body>
+
 </html>

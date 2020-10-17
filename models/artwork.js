@@ -34,6 +34,10 @@ var Artwork = sequelize.define("artwork", {
         notNull: true,
         isURL: true
     },
+    artwork_pubID: {
+        type: Datatypes.STRING,
+        notNull: true
+    }
 }, 
 
 {
