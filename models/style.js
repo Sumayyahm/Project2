@@ -17,7 +17,7 @@ var Style = sequelize.define("style", {
 });
 
 Style.associate = function(models) {
-    Style.hasOne(models.Artwork, {
+    Style.hasMany(models.Artwork, {
         onDelete: "cascade"
     });
 };
