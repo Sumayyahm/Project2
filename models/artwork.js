@@ -34,17 +34,6 @@ var Artwork = sequelize.define("artwork", {
         notNull: true,
         isURL: true
     },
-    style_name: {
-        type: Datatypes.STRING,
-        notNull: true,
-        len: [1, 60]
-     },
-     artist_name: {
-        type: Datatypes.STRING,
-        notNull: true,
-        unique: true,
-        len: [1,40]
-     }
 }, 
 
 {
@@ -52,15 +41,11 @@ var Artwork = sequelize.define("artwork", {
 });
 
 Artwork.associate = function(models) {
-    Artwork.hasOne(models.Artist,{
+    Artwork.belongsTo(models.Artist,{
         onDelete: "cascade"
     });
-    Artwork.hasOne(models.Style)
+    Artwork.belongsTo(models.Style)
 };
-
-
-
-
 
 return Artwork;
 
