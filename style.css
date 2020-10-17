@@ -30,24 +30,23 @@ body{
 }
 
 
-@media screen and (max-width:768px){
-    .uk-navbar-left{
-        display: block;
-        width: 100%;
-    }
-    .uk-navbar-item{ display: inline; }
+
+.form{
+    text-align: center;
+    box-align: center;
+    clear: both;
+    /* position: absolute;
+    left: 50%;
+    margin-left: 225px;
+    width: 450px; */
+    margin-top: 20%;
+    margin-left: 20%;
+    font-family: 'Cormorant Garamond', serif;
+
     
-    .uk-navbar-nav{ display:block; }
-    .navbar-collapse{ width:100%; }
-    .uk-navbar-nav li{
-        display: block;
-        padding: 10px;
-        height: 40px;
-        border-bottom: 1px solid #ddd;
-    }
-    .uk-navbar-nav li a{
-        display: block;
-        width: 80%;
-        padding: 0.5rem 1rem;
-    }
+
 }
+.uk-button{
+    color: gray;
+}
+
