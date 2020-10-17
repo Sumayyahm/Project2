@@ -32,6 +32,11 @@ var Artwork = sequelize.define("artwork", {
         notNull: true,
         min: 3,
         isDecimal: true
+    },
+    artwork_image: {
+        type: Datatypes.STRING,
+        notNull: true,
+        isURL: true
     }
 }, 
 

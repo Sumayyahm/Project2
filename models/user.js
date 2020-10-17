@@ -25,3 +25,10 @@ module.exports = function(sequelize, DataTypes) {
   });
   return User;
 };
+
+//insert in if decide to use multiple galleries
+// user_name: 
+// user_address:
+// user_phone:
+// user_email:
+// user_website:
