@@ -30,6 +30,11 @@ var Artist = sequelize.define("artist", {
 {
     freezeTableName: true
 });
+Artist.associate = function(models) {
+    Artist.hasMany(models.Artwork,{
+        onDelete: "cascade"
+    });
+};
 
 return Artist;
 

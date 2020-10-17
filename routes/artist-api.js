@@ -33,13 +33,14 @@ module.exports = function (app) {
 
     // ADD an artist 
     app.post("/api/artist/new", function (req, res) {
-        console.log("Book Data:");
+        console.log("Artist Data:");
         console.log(req.body);
         Book.create({
-            title: req.body.title,
-            author: req.body.author,
-            genre: req.body.genre,
-            pages: req.body.pages
+            artist_name: req.body.artistName,
+            artist_phone: req.body.artistPhone,
+            artist_email: req.body.artistEmail,
+            artist_bio: req.body.artistBio,
+            artist_portait: req.body.artistPort 
         }).then(function (results) {
             res.json(results);
         });

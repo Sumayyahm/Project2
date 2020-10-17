@@ -17,11 +17,11 @@ var Style = sequelize.define("style", {
 });
 
 Style.associate = function(models) {
-    Collection.hasOne(models.Artwork, {
+    Style.hasOne(models.Artwork, {
         onDelete: "cascade"
     });
 };
 
-return Collection;
+return Style;
 
 };

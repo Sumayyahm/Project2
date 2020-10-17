@@ -12,11 +12,7 @@ var Artwork = sequelize.define("artwork", {
         notNull: true
     },
     artwork_descript: Datatypes.TEXT,
-    artwork_style: {
-       type: Datatypes.STRING,
-       notNull: true,
-       len: [1,100]
-    },
+  
     artwork_medium: {
         type: Datatypes.STRING,
         notNull: true,
@@ -37,7 +33,18 @@ var Artwork = sequelize.define("artwork", {
         type: Datatypes.STRING,
         notNull: true,
         isURL: true
-    }
+    },
+    style_name: {
+        type: Datatypes.STRING,
+        notNull: true,
+        len: [1, 60]
+     },
+     artist_name: {
+        type: Datatypes.STRING,
+        notNull: true,
+        unique: true,
+        len: [1,40]
+     }
 }, 
 
 {
@@ -48,7 +55,12 @@ Artwork.associate = function(models) {
     Artwork.hasOne(models.Artist,{
         onDelete: "cascade"
     });
+    Artwork.hasOne(models.Style)
 };
+
+
+
+
 
 return Artwork;
 
