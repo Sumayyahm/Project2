@@ -21,7 +21,7 @@ module.exports = function (app) {
 
     // GET a specific artist 
     app.get("/api/artist/:artist", function (req, res) {
-        Artist.findAll({
+        Artist.findOne({
             where: {
                 artist: req.params.artist
             }

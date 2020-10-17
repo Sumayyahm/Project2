@@ -21,7 +21,7 @@ module.exports = function (app) {
 
     // GET a specific customer 
     app.get("/api/:customer", function (req, res) {
-        Customer.findAll({
+        Customer.findOne({
             where: {
                 customer_name: req.params.book
             }
@@ -32,7 +32,7 @@ module.exports = function (app) {
 
     // GET all customers by art style preference 
     app.get("/api/customer/:style", function (req, res) {
-        Customer.findAll({
+        Customer.findAne({
             where: {
                 customer_style: req.params.genre
             }
