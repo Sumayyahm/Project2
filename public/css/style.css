@@ -29,8 +29,6 @@ body{
     font-family: 'Cormorant Garamond', serif;
 }
 
-
-
 .form{
     text-align: center;
     box-align: center;
@@ -42,11 +40,19 @@ body{
     margin-top: 20%;
     margin-left: 20%;
     font-family: 'Cormorant Garamond', serif;
-
-    
-
 }
 .uk-button{
     color: gray;
 }
 
+#upload_widget {
+    color: #666;
+    background-color: white;
+    padding: initial;
+}
+
+#upload_widget:hover {
+    transition: all .3s ease-in-out;
+    color: white;
+    background-color: #666;
+}
