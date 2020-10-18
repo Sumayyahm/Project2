@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
-var Style = sequelize.define("style", {
+var Style = sequelize.define("Style", {
     style_name: {
         type: DataTypes.STRING,
         notNull: true,
@@ -16,13 +16,20 @@ var Style = sequelize.define("style", {
     freezeTableName: true
 });
 
-Style.associate = function(models) {
-    Style.belongsToMany(models.Artwork, {
+Style.associate = function(model) {
+    Style.belongsTo(model.Artwork, {
+        foreignKey: {
+            allowNull: false
+          },
         onDelete: "cascade"
-    },
-    Style.belongsToMany(models.Artist, {
+    }),
+Style.associate = function(model) {
+    Style.belongsTo(model.Artist, {
+        foreignKey: {
+            allowNull: false
+          },
         onDelete:"cascade"
-    }));
+    });
 };
 
 return Style;
