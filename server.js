@@ -6,8 +6,6 @@ var PORT = process.env.PORT || process.env.LOCALPORT;
 
 var db = require("./models");
 
-app.use(express.static("public"));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
