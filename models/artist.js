@@ -1,28 +1,28 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function(sequelize, DataTypes) {
 
 var Artist = sequelize.define("artist", {
     artist_name: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         notNull: true,
         unique: true,
         len: [1,40]
     },
     artist_phone: {
-        type: Datatypes.INTEGER,
+        type: DataTypes.INTEGER,
         notNull: true,
         isInt: true
     },
     artist_email: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         notNull: true,
         isEmail: true
     },
     artist_bio: {
-        type: Datatypes.TEXT,
+        type: DataTypes.TEXT,
         max: 200
     },
     artist_portrait: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         isURL: true
     }
 }, 
@@ -30,13 +30,15 @@ var Artist = sequelize.define("artist", {
 {
     freezeTableName: true
 });
-// Artist.associate = function(models) {
-//     Artist.hasMany(models.Artwork,{
-//         onDelete: "cascade"
-//     });
-// };
+Artist.associate = function(models) {
+    Artist.hasMany(models.Artwork, {
+        onDelete: "cascade"
+    },
+    Artist.belongsToMany(models.Style, {
+        onDelete: "cascade"
+    }));
+};
 
 return Artist;
 
 };
-
