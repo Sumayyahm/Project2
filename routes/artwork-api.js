@@ -14,7 +14,7 @@ module.exports = function (app) {
     app.post("/api/artwork", function (req, res) {
         console.log("Artwork Data:");
         console.log(req.body);
-        Book.create({
+        Artwork.create({
             artwork_name: "test",
             artwork_size: "20 inches",
             artwork_descript: "this is a test",

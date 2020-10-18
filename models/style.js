@@ -16,11 +16,11 @@ var Style = sequelize.define("style", {
     freezeTableName: true
 });
 
-Style.associate = function(models) {
-    Style.hasMany(models.Artwork, {
-        onDelete: "cascade"
-    });
-};
+// Style.associate = function(models) {
+//     Style.hasMany(models.Artwork, {
+//         onDelete: "cascade"
+//     });
+// };
 
 return Style;
 

@@ -44,12 +44,12 @@ var Artwork = sequelize.define("artwork", {
     freezeTableName: true
 });
 
-Artwork.associate = function(models) {
-    Artwork.belongsTo(models.Artist,{
-        onDelete: "cascade"
-    });
-    Artwork.belongsTo(models.Style)
-};
+// Artwork.associate = function(models) {
+//     Artwork.belongsTo(models.Artist,{
+//         onDelete: "cascade"
+//     });
+//     Artwork.belongsTo(models.Style)
+// };
 
 return Artwork;
 
