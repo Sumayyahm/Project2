@@ -34,18 +34,22 @@ var Artwork = sequelize.define("artwork", {
         notNull: true,
         isURL: true
     },
+    artwork_pubID: {
+        type: Datatypes.STRING,
+        notNull: true
+    }
 }, 
 
 {
     freezeTableName: true
 });
 
-Artwork.associate = function(models) {
-    Artwork.belongsTo(models.Artist,{
-        onDelete: "cascade"
-    });
-    Artwork.belongsTo(models.Style)
-};
+// Artwork.associate = function(models) {
+//     Artwork.belongsTo(models.Artist,{
+//         onDelete: "cascade"
+//     });
+//     Artwork.belongsTo(models.Style)
+// };
 
 return Artwork;
 
