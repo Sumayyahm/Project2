@@ -1,6 +1,8 @@
+
+
 module.exports = function(sequelize, DataTypes) {
 
-var Artist = sequelize.define("artist", {
+var Artist = sequelize.define("Artist", {
     artist_name: {
         type: DataTypes.STRING,
         notNull: true,
@@ -31,15 +33,23 @@ var Artist = sequelize.define("artist", {
     freezeTableName: true
 });
 
-Artist.associate = function(models) {
-    Artist.hasMany(models.Artwork, {
+Artist.associate = function(model) {
+    Artist.hasMany(model.Artwork, {
+        foreignKey: {
+            allowNull: false
+          },
         onDelete: "cascade"
-    },
-    Artist.belongsToMany(models.Style, {
+    }),
+
+Artist.associate = function(model) {
+    Artist.hasMany(model.Style, {
+        foreignKey: {
+            allowNull: false
+          },
         onDelete: "cascade"
-    }));
+    });
 };
 
 return Artist;
 
-};
+}};
