@@ -1,36 +1,36 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function(sequelize, DataTypes) {
 
 var Artwork = sequelize.define("artwork", {
     artwork_name: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         notNull: true,
         len: [1,60]
     },
     artwork_size: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         isAlphanumeric: true,
         notNull: true
     },
-    artwork_descript: Datatypes.TEXT,
+    artwork_descript: DataTypes.TEXT,
   
     artwork_medium: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         notNull: true,
         len: [1,100]
     },
     artwork_colortone: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         notNull: true,
         len: [1,50]
     },
     artwork_price: {
-        type: Datatypes.INTEGER,
+        type: DataTypes.INTEGER,
         notNull: true,
         min: 3,
         isDecimal: true
     },
     artwork_image: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         notNull: true,
         isURL: true
     },
@@ -44,7 +44,7 @@ Artwork.associate = function(models) {
     Artwork.belongsTo(models.Artist,{
         onDelete: "cascade"
     });
-    Artwork.belongsTo(models.Style)
+    Artwork.belongsToMany(models.Style)
 };
 
 return Artwork;
