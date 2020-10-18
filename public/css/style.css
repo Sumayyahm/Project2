@@ -56,3 +56,17 @@ body{
     color: white;
     background-color: #666;
 }
+
+#selected-style {
+    font-family: 'Cormorant Garamond', serif;
+    color: gray;
+    margin-left: 55px;
+   
+}
+
+hr {
+    margin-left: 55px;
+    margin-right: 55px;
+    color: gray;
+    text-decoration-thickness: 5px;
+}
