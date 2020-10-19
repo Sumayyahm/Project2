@@ -1,6 +1,3 @@
-  
-
-
 module.exports = function (sequelize, DataTypes) {
 
     var Artist = sequelize.define("Artist", {
@@ -26,7 +23,8 @@ module.exports = function (sequelize, DataTypes) {
         artist_portrait: {
             type: DataTypes.STRING,
             isURL: true
-        },
+        }
+    },
 
         {
             freezeTableName: true
