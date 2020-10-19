@@ -33,15 +33,11 @@ var Artist = sequelize.define("Artist", {
     freezeTableName: true
 });
 
-Artist.associate = function(models) {
-    Artist.hasMany(models.Artwork, {
-        foreignKey: {
-            allowNull: false
-          },
-        onDelete: "cascade"
+Artist.associate = function(model) {
+    Artist.hasMany(model.Artwork, {
+    foreignKey: "artist_name",
     }),
-    
-    Artist.hasMany(models.Style, {
+    Artist.hasMany(model.Style, {
         foreignKey: {
             allowNull: false
           },

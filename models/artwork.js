@@ -6,6 +6,12 @@ module.exports = function (sequelize, DataTypes) {
             notNull: true,
             len: [1, 60]
         },
+        artist_name: {
+            type: DataTypes.STRING,
+            notNull: true,
+            unique: true,
+            len: [1,40]
+        },
         artwork_size: {
             type: DataTypes.STRING,
             isAlphanumeric: true,
@@ -44,18 +50,17 @@ module.exports = function (sequelize, DataTypes) {
             freezeTableName: true
         });
 
-    Artwork.associate = function (models) {
-        Artwork.belongsTo(models.Artist, {
-            foreignKey: {
-                allowNull: false
-              },
-            onDelete: "cascade"
-        });
 
-        Artwork.hasMany(models.Style, {
+    
+    Artwork.associate = function (model) {
+        Artwork.belongsTo(model.Artist, {
+            foreignKey: "artist_name",
+        }),
+
+        Artwork.hasMany(model.Style, {
             foreignKey: {
                 allowNull: false
-              },
+            },
             onDelete: "cascade"
         });
     };
