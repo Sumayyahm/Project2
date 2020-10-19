@@ -58,7 +58,7 @@ module.exports = function (app) {
     });
 
 
-    //Create artwork
+    // Create artwork
     app.post("/api/artwork", function (req, res) {
         db.Artwork.create(req.body).then(function(dbArtwork) {
             res.json(dbArtwork)
@@ -76,23 +76,6 @@ module.exports = function (app) {
             }
         }).then(function () {
             res.end();
-        });
-    });
-
-    // POST artwork images
-    app.post("/api/artwork", function (req, res) {
-        console.log("Artwork Data:");
-        console.log(req.body);
-        db.Artwork.create({
-            artwork_name: "test",
-            artwork_size: "20 inches",
-            artwork_descript: "this is a test",
-            artwork_medium: "None",
-            artwork_colortone: "None",
-            artwork_image: req.body.imgUrl,
-            artwork_pubID: req.body.publicId
-        }).then(function (dbResults) {
-            res.json(dbResults);
         });
     });
 

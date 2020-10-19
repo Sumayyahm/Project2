@@ -1,3 +1,4 @@
+  
 
 
 module.exports = function (sequelize, DataTypes) {
@@ -26,8 +27,7 @@ module.exports = function (sequelize, DataTypes) {
         artist_portrait: {
             type: DataTypes.STRING,
             isURL: true
-        }
-    },
+        },
 
     artist_portrait: {
         type: DataTypes.STRING,
