@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
 
-    var Artwork = sequelize.define("Artwork", {
+    var Artwork = sequelize.define("artwork", {
         artwork_name: {
             type: DataTypes.STRING,
             notNull: true,
@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
             isURL: true
         },
         artwork_pubID: {
-            type: DataTypes.STRING,
+            type: Dataypes.STRING,
             notNull: true
         }
     },
@@ -44,23 +44,12 @@ module.exports = function (sequelize, DataTypes) {
             freezeTableName: true
         });
 
-    Artwork.associate = function (model) {
-        Artwork.belongsTo(model.Artist, {
-            foreignKey: {
-                allowNull: false
-              },
+    Artwork.associate = function (models) {
+        Artwork.belongsTo(models.Artist, {
             onDelete: "cascade"
         });
-    Artwork.associate = function (model) {
-        Artwork.hasMany(model.Style, {
-            foreignKey: {
-                allowNull: false
-              },
-            onDelete: "cascade"
-        });
+        Artwork.belongsToMany(models.Style)
     };
-
-
 
     return Artwork;
 
