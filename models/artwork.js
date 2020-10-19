@@ -6,6 +6,11 @@ module.exports = function (sequelize, DataTypes) {
             notNull: true,
             len: [1, 60]
         },
+        style_name: {
+            type: DataTypes.STRING,
+            notNull: true,
+            len: [1, 60]
+        },
         artist_name: {
             type: DataTypes.STRING,
             notNull: true,
@@ -58,10 +63,7 @@ module.exports = function (sequelize, DataTypes) {
         }),
 
         Artwork.hasMany(model.Style, {
-            foreignKey: {
-                allowNull: false
-            },
-            onDelete: "cascade"
+            foreignKey: "style_name",
         });
     };
 

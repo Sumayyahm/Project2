@@ -29,28 +29,22 @@ module.exports = function (sequelize, DataTypes) {
             isURL: true
         },
 
-    artist_portrait: {
-        type: DataTypes.STRING,
-        isURL: true
-    }
-}, 
+        {
+            freezeTableName: true
+        });
 
-{
-    freezeTableName: true
-});
+    Artist.associate = function (model) {
+        Artist.hasMany(model.Artwork, {
+            foreignKey: "artist_name",
+        }),
+            Artist.hasMany(model.Style, {
+                foreignKey: {
+                    allowNull: false
+                },
+                onDelete: "cascade"
+            });
+    };
 
-Artist.associate = function(model) {
-    Artist.hasMany(model.Artwork, {
-    foreignKey: "artist_name",
-    }),
-    Artist.hasMany(model.Style, {
-        foreignKey: {
-            allowNull: false
-          },
-        onDelete: "cascade"
-    });
-};
-
-return Artist;
+    return Artist;
 
 };
