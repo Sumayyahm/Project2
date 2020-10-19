@@ -44,15 +44,15 @@ module.exports = function (sequelize, DataTypes) {
             freezeTableName: true
         });
 
-    Artwork.associate = function (model) {
-        Artwork.belongsTo(model.Artist, {
+    Artwork.associate = function (models) {
+        Artwork.belongsTo(models.Artist, {
             foreignKey: {
                 allowNull: false
               },
             onDelete: "cascade"
         });
-    Artwork.associate = function (model) {
-        Artwork.hasMany(model.Style, {
+
+        Artwork.hasMany(models.Style, {
             foreignKey: {
                 allowNull: false
               },
