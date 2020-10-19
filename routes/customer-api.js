@@ -75,19 +75,10 @@ module.exports = function (app) {
     });
 
     //ADD a customer 
-    app.post("/api/customer/new", function (req, res) {
-        console.log("Customer Data:");
-        console.log(req.body);
-        db.Customer.create({
-            customer_name: req.body.custName,
-            customer_phone: req.body.custPhone,
-            customer_email: req.body.custEmail,
-            customer_style: req.body.custStyle,
-            customer_color: req.body.custColor,
-            customer_size: req.body.custSize,
-        }).then(function (dbCustomer) {
-            res.json(dbCustomer);
-        });
+    app.post("/api/customer", function (req, res) {
+        db.Customer.create(req.body).then(function(dbCustomer) {
+            res.josn(dbCustomer)
+        })
 
     });
 

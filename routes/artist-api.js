@@ -30,19 +30,36 @@ module.exports = function (app) {
         });
     });
 
+    //Get all artist by artwork
+
+    app.get("/api/artist/:artwork", function (req, res) {
+        db.Artist.findAll({
+            where: {
+                artwork: req.params.artwork
+            },
+            include: [db.Artwork]
+        }).then(function(dbArtist) {
+            res.json(dbArtist)
+        });
+    });
+
+       //Get all artist by style
+
+       app.get("/api/artist/:style", function (req, res) {
+        db.Artist.findAll({
+            where: {
+                style: req.params.style
+            },
+            include: [db.Style]
+        }).then(function(dbArtist) {
+            res.json(dbArtist)
+        });
+    });
 
     // ADD an artist 
-    app.post("/api/artist/new", function (req, res) {
-        console.log("Artist Data:");
-        console.log(req.body);
-        db.Artist.create({
-            artist_name: req.body.artistName,
-            artist_phone: req.body.artistPhone,
-            artist_email: req.body.artistEmail,
-            artist_bio: req.body.artistBio,
-            artist_portait: req.body.artistPort 
-        }).then(function (dbArtist) {
-            res.json(dbArtist);
+    app.post("/api/artist", function (req, res) {
+        db.Artist.create(req,body).then(function(dbArtist) {
+            res.json(dbArtist)
         });
     });
 
