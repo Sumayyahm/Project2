@@ -18,10 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     
     Style.associate = function(model) {
         Style.belongsTo(model.Artwork, {
-            foreignKey: {
-                allowNull: false
-              },
-            onDelete: "cascade"
+            foreignKey: "style_name"
         }),
     
         Style.belongsTo(model.Artist, {
