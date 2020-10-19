@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
 
-    var Artwork = sequelize.define("artwork", {
+    var Artwork = sequelize.define("Artwork", {
         artwork_name: {
             type: DataTypes.STRING,
             notNull: true,
@@ -46,10 +46,21 @@ module.exports = function (sequelize, DataTypes) {
 
     Artwork.associate = function (models) {
         Artwork.belongsTo(models.Artist, {
+            foreignKey: {
+                allowNull: false
+              },
             onDelete: "cascade"
         });
-        Artwork.belongsToMany(models.Style)
+
+        Artwork.hasMany(models.Style, {
+            foreignKey: {
+                allowNull: false
+              },
+            onDelete: "cascade"
+        });
     };
+
+
 
     return Artwork;
 

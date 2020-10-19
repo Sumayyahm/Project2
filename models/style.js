@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
 
     var Style = sequelize.define("Style", {
         style_name: {
@@ -10,29 +10,28 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TEXT,
             max: 200
         }
-    },
-
-        {
-            freezeTableName: true
-        });
-
-    Style.associate = function (model) {
+    }, 
+    
+    {
+        freezeTableName: true
+    });
+    
+    Style.associate = function(model) {
         Style.belongsTo(model.Artwork, {
             foreignKey: {
                 allowNull: false
-            },
+              },
             onDelete: "cascade"
         }),
-            Style.associate = function (model) {
-                Style.belongsTo(model.Artist, {
-                    foreignKey: {
-                        allowNull: false
-                    },
-                    onDelete: "cascade"
-                });
-            };
-
-        return Style;
-
+    
+        Style.belongsTo(model.Artist, {
+            foreignKey: {
+                allowNull: false
+              },
+            onDelete:"cascade"
+        });
     };
-}
+    
+    return Style;
+    
+    };
