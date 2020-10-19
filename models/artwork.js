@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
             isURL: true
         },
         artwork_pubID: {
-            type: Dataypes.STRING,
+            type: DataTypes.STRING,
             notNull: true
         }
     },
