@@ -43,15 +43,19 @@
         <br>
         
 
-        <h1 id="selected-style">
-            
-        </h1>
+        <div id="selected-style"> 
+            {{#each Style}} 
+        <h1>    {{this.style_name}}          </h1>
+        {{!-- <h2>    {{this.style_description}}        </h2> --}}
+            {{/each}}
+        </div>
         <hr>
+        
       
 
         <div class="artwork-display">
             
-            {{}}
+            {{> art/ art-work}}
 
         </div>
         
