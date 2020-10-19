@@ -6,7 +6,6 @@
 // =============================================================
 
 // Requiring our models
-var Artwork = require("../models/artwork.js");
 const db = require("../models/index.js");
 
 
@@ -25,7 +24,7 @@ module.exports = function (app) {
     app.get("/api/:artwork", function (req, res) {
         db.Artwork.findAll({
             where: {
-                artwork_name: req.params.artistName
+                artwork_name: req.params.artwork
             }
         }).then(function (dbArtwork) {
             res.json(dbArtwork);
