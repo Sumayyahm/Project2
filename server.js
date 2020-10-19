@@ -16,6 +16,10 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+var routes = require("./controller/artController.js");
+
+app.use(routes);
+
 
 require("./routes/artist-api.js")(app);
 require("./routes/artwork-api.js")(app);
