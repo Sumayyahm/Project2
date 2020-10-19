@@ -13,7 +13,6 @@ module.exports = function (sequelize, DataTypes) {
         artist_phone: {
             type: DataTypes.INTEGER,
             notNull: true,
-            isInt: true
         },
         artist_email: {
             type: DataTypes.STRING,
