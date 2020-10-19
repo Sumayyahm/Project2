@@ -31,51 +31,53 @@ module.exports = function (app) {
         });
     });
 
-    // GET artworks by style
+    //Get artwork by style
 
     app.get("/api/artwork/:style", function (req, res) {
         db.Artwork.findAll({
             where: {
+                style: req.params.style
+            },
+            include: [db.Style]
+        }).then(function(dbArtwork) {
+            res.json(dbArtwork)
+        });
+    });
 
-            }
-        })
-    })
+    //Get artwork by artist
 
-
-    app.post("/api/artwork", function (req, res) {
-        console.log("Artwork Data:");
-        console.log(req.body);
-        db.Artwork.create({
-            artwork_name: "test",
-            artwork_size: "20 inches",
-            artwork_descript: "this is a test",
-            artwork_medium: "None",
-            artwork_colortone: "None",
-            artwork_image: req.body.imgUrl,
-            artwork_pubID: req.body.publicId
-        }).then(function (dbResults) {
-            res.json(dbResults);
+    app.get("/api/artwork/:artist", function (req, res) {
+        db.Artwork.findAll({
+            where: {
+                artist: req.params.artist
+            },
+            include: [db.Artist]
+        }).then(function(dbArtwork) {
+            res.json(dbArtwork)
         });
     });
 
 
+    //Create artwork
+    app.post("/api/artwork", function (req, res) {
+        db.Artwork.create(req.body).then(function(dbArtwork) {
+            res.json(dbArtwork)
+        })
+    });
 
-    // GET artworks by artist 
-
-    // GET artworks by size
-
-    // GET artworks by medium
-
-    // GET artworks by color tones
-
-    // GET artworks by price
-
-    // ADD artwork 
 
     // DELETE artwork
-
-
-
+    app.delete("/api/artwork/:id", function (req,res) {
+        console.log("Artwork ID:");
+        console.log(req.params.id);
+        db.Customer.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(function () {
+            res.end();
+        });
+    });
 
 
 }

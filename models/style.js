@@ -34,4 +34,4 @@ Style.associate = function(model) {
 
 return Style;
 
-};
+}};
