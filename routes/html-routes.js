@@ -7,7 +7,7 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/index.html"))
     });
 
-    app.get("/manager", function(req,res) {
+    app.get("/manager", isAuthenticated, function(req,res) {
 
         res.sendFile(path.join(__dirname, "../public/cplogged.html"))
     })

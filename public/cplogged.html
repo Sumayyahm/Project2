@@ -332,15 +332,18 @@
                         publicId: result.info.public_id
                     }
                     console.log(newSavedImg)
+                    myWidget.close()
 
-                    // $.post("/api/artwork", newSavedImg)
-                    //     .then(function (data) {
-                    //         console.log("add.html", data);
-                    //     });
+                    $.post("/api/artwork", newSavedImg)
+                        .then(function (data) {
+                            console.log("add.html", data);
+                            
+                        });
                 };
             }
-
             )
+
+            
 
             document.getElementById("upload_widget").addEventListener("click", function () {
                 event.stopPropagation();
