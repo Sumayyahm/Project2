@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/style.css"/>
+    <title>Esthete Gallery</title>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/script.js"></script>
+    <script type="text/javascript" src="../../public/js/signup.js"></script>
+</head>
+<body>
+    <header>
+    {{>navbar}}
+    </header>
+
+    <section>
+    <h2 id="upcoming">Upcoming Events</h2>
+    <ul class="uk-grid-large uk-child-width-1-2 uk-child-width-1-1 uk-text-center" uk-sortable="handle: .uk-card" uk-grid>
+        <li>
+            <div class="uk-card uk-card-default uk-card-body events">
+                <p><strong>Event Name</strong> </p>
+                <p>Date:</p>
+                <p>Time:</p>
+                <p>Description:</p>
+                <p>Address:</p>
+            </div>
+        </li>
+        <li>
+            <div class="uk-card uk-card-default uk-card-body events">
+                <p><strong>Event Name</strong> </p>
+                <p>Date:</p>
+                <p>Time:</p>
+                <p>Description:</p>
+                <p>Address:</p>
+            </div>
+        </li>
+        <li>
+            <div class="uk-card uk-card-default uk-card-body events">
+                <p><strong>Event Name</strong> </p>
+                <p>Date:</p>
+                <p>Time:</p>
+                <p>Description:</p>
+                <p>Address:</p>
+            </div>
+        </li>
+        <li>
+            <div class="uk-card uk-card-default uk-card-body events">
+                <p><strong>Event Name</strong> </p>
+                <p>Date:</p>
+                <p>Time:</p>
+                <p>Description:</p>
+                <p>Address:</p>
+            </div>
+        </li>
+             
+    </ul>
+    </section>
+</body>
+</html>
