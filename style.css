@@ -1,5 +1,5 @@
 .galleryname {
-    width: 170px;
+    width: 200px;
     height: auto;
     float: left;
     margin: 20px
@@ -13,18 +13,23 @@
     /* margin: 20px; */
     margin-bottom: 30px;
     margin-top: -40px;
+    /* width: 100%;
+    max-width: 100%;
+    height: auto; */
+    
+    
+   
   
 
 }
+
 nav{
     /* margin-left: 100px; */
     float: right;
     font-family: 'Cormorant Garamond', serif;
     margin-right: 20px;
 }
-.navi{
-    font-family: 'Cormorant Garamond', serif;
-}
+
 body{
     font-family: 'Cormorant Garamond', serif;
 }
@@ -33,20 +38,74 @@ body{
 
 .form{
     text-align: center;
-    box-align: center;
+    margin-top: 100px;
+    margin-left: 2px;
+    /* box-align: center;
     clear: both;
     /* position: absolute;
     left: 50%;
     margin-left: 225px;
     width: 450px; */
-    margin-top: 20%;
+    /* margin-top: 20%;
     margin-left: 20%;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif; */ 
 
     
 
+}
+
+.uk-card-title{
+    font-family: 'Cormorant Garamond', serif;
+    color: gray;
 }
 .uk-button{
     color: gray;
 }
 
+.uk-text-center{
+    width: 100%;
+}
+.uk-card{
+    clear: both;
+    /* width: 50%; */
+    margin-left: 20%;
+    margin-right: 20%;
+
+    
+    
+}
+#upload{
+    clear: both;
+}
+#navi{
+    display: inline;
+
+}
+#sidebar{
+    display: none;
+}
+#sidebartoggle{
+    display: none;
+}
+#sidenav{
+    text-align: center;
+    
+}
+@media screen and (max-width: 1000px) {
+    #navi{
+        display: none;
+
+    }
+    #sidebar{
+        display: inline;
+    }
+    #sidebartoggle{
+        display: inline;
+        margin: 30px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .galleryname {
+        width: 100px;
+    }
+}
