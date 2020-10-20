@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "Pookie_25?!",
-=======
     "password": "Youaremybootcamp1!",
->>>>>>> 0d0e5795b2c48fbfd54f76120347704e466ef97a
     "database": "gallery_db",
     "host": "127.0.0.1",
     "port": 3306,
