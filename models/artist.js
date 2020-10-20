@@ -28,8 +28,8 @@ module.exports = function (sequelize, DataTypes) {
         artist_portrait: {
             type: DataTypes.STRING,
             isURL: true
-        },
-
+        }
+    },
         {
             freezeTableName: true
         });
