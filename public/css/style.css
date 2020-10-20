@@ -48,6 +48,7 @@ body{
 }
 .uk-button{
     color: gray;
+    
 }
 .uk-text-center{
     width: 100%;
@@ -60,6 +61,16 @@ body{
 }
 #upload{
     clear: both;
+}
+#upcoming{
+    font-family: 'Cormorant Garamond', serif;
+    color: gray;
+    clear: both;
+    text-align: center;
+}
+.events{
+    font-family: 'Cormorant Garamond', serif;
+    
 }
 #navi{
     display: inline;
@@ -99,6 +110,9 @@ hr {
 }
 ul#horizontal-list li {
     display: inline;
+}
+#exhibition{
+    clear: both;
 }
 @media screen and (max-width: 1000px) {
     #navi{
