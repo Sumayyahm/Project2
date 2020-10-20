@@ -11,13 +11,13 @@ $(document).ready(function() {
         email: emailInput.val().trim(),
         password: passwordInput.val().trim()
       };
-      console.log(userData)
   
       if (!userData.email || !userData.password) {
         return;
       }
       // If we have an email and password, run the signUpUser function
       signUpUser(userData.email, userData.password);
+      console.log(userData)
       emailInput.val("");
       passwordInput.val("");
     });
@@ -34,7 +34,7 @@ $(document).ready(function() {
           if(err){
             handleLoginErr(err)
           }
-          window.location.replace("/cplogged");
+          window.location.replace("/manager");
           // If there's an error, handle it by throwing up a bootstrap alert
         })
     }
