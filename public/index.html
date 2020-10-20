@@ -146,26 +146,90 @@
                 <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
                     <div id="form">
 
-                        <form>
+                        <form class="signup">
 
                             <div class="uk-margin">
                                 <div class="uk-inline">
                                     <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                    <input class="uk-input" type="text">
+                                    <input class="uk-input" id="email-input" type="email" placeholder="Email">
                                 </div>
                             </div>
 
                             <div class="uk-margin">
                                 <div class="uk-inline">
                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                    <input class="uk-input" type="text">
+                                    <input class="uk-input" type="password" id="password-input" placeholder="Password" >
                                 </div>
                             </div>
+                            
                             <p uk-margin>
-                                <button class="uk-button uk-button-default uk-button-small">sign up</button>
-                            <p>or Log in <a>Here</a></p>
+                                <button type="submit" class="uk-button uk-button-default uk-button-small">sign up</button>
+                            <p>or Log in <a href="" uk-toggle="target: #offcanvas-reveal-login">Here</a></p>
                             </p>
                         </form>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="offcanvas-reveal-login" uk-offcanvas="mode: reveal; overlay: true ;flip:true" id="loginposition">
+            <div class="uk-offcanvas-bar ">
+
+                <form class="login formtwo">
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input class="uk-input" id="email-input" type="email" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input class="uk-input" type="password" id="password-input" placeholder="Password" >
+                        </div>
+                    </div>
+                    
+                    <p uk-margin>
+                        <button type="submit" class="uk-button uk-button-default uk-button-small">Login</button>
+                    <p>or Sign up <a href="" uk-toggle="target: #offcanvas-reveal-signup">Here</a></p>
+                    </p>
+                </form>
+
+            </div>
+        </div>
+        <div id="offcanvas-reveal-signup" uk-offcanvas="mode: reveal; overlay: true ;flip:true">
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
+                    <div id="form">
+
+                        <form class="signup">
+
+                            <div class="uk-margin">
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                    <input class="uk-input" id="email-input" type="email" placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="uk-margin">
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                    <input class="uk-input" type="password" id="password-input" placeholder="Password" >
+                                </div>
+                            </div>
+                            
+                            <p uk-margin>
+                                <button type="submit" class="uk-button uk-button-default uk-button-small">sign up</button>
+                            <p>or Log in <a href="" uk-toggle="target: #offcanvas-reveal-login">Here</a></p>
+                            </p>
+                        </form>
+                        
 
                     </div>
                 </div>
@@ -192,6 +256,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
+    <script type="text/javascript" src="../public/js/signup.js"></script>
 
 </body>
 

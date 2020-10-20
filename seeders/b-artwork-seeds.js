@@ -11,8 +11,8 @@ module.exports = {
       artwork_medium: "oil, canvas",
       artwork_colortone:"green",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603213194/esthete/h24mpnzmeqhq17szcvf8.jpg",
+      artwork_pubID: "esthete/h24mpnzmeqhq17szcvf8",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -24,8 +24,8 @@ module.exports = {
       artwork_medium: "oil, canvas",
       artwork_colortone:"blue",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603213289/esthete/n4ve58jyu3eapacoolru.jpg",
+      artwork_pubID: "esthete/n4ve58jyu3eapacoolru",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -37,8 +37,8 @@ module.exports = {
       artwork_medium: "oil, canvas",
       artwork_colortone:"orange",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603213344/esthete/pwpwd0rlh8cfrufwtklr.jpg",
+      artwork_pubID: "esthete/pwpwd0rlh8cfrufwtklr",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -50,8 +50,8 @@ module.exports = {
       artwork_medium: "oil, canvas",
       artwork_colortone:"white",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603213406/esthete/hh6a0iy51xrvqjcphg87.jpg",
+      artwork_pubID: "esthete/hh6a0iy51xrvqjcphg87",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -63,8 +63,8 @@ module.exports = {
       artwork_medium: "oil, canvas",
       artwork_colortone:"blue",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603211780/esthete/evkusujsfwdd9lcvmp7h.jpg",
+      artwork_pubID: "esthete/evkusujsfwdd9lcvmp7h",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -76,8 +76,8 @@ module.exports = {
       artwork_medium: "oil, canvas",
       artwork_colortone:"brown",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603213553/esthete/flygjhfghumvezbrid84.webp",
+      artwork_pubID: "esthete/flygjhfghumvezbrid84",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -89,8 +89,8 @@ module.exports = {
       artwork_medium: "oil on canvas",
       artwork_colortone:"pink",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603213858/esthete/ba316jueflz9vfld29re.jpg",
+      artwork_pubID: "esthete/ba316jueflz9vfld29re",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -102,8 +102,8 @@ module.exports = {
       artwork_medium: "oil, canvas",
       artwork_colortone:"brwon",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603213978/esthete/ghou2njqmqxak5h6wkby.jpg",
+      artwork_pubID: "esthete/ghou2njqmqxak5h6wkby",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -115,8 +115,8 @@ module.exports = {
       artwork_medium: "oil, canvas",
       artwork_colortone:"multicolor",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603214048/esthete/aq2i4dsmx9mfplwxfftw.jpg",
+      artwork_pubID: "esthete/aq2i4dsmx9mfplwxfftw",
       createdAt:new Date (),
       updatedAt:new Date ()
     },{
@@ -128,8 +128,8 @@ module.exports = {
       artwork_medium: "oil canvas",
       artwork_colortone:"brown",
       artwork_price: "200000",
-      artwork_image: "",
-      artwork_pubID: "",
+      artwork_image: "http://res.cloudinary.com/esthete/image/upload/v1603214153/esthete/w2hkzwhxp0ntpnt0xbzi.jpg",
+      artwork_pubID: "esthete/w2hkzwhxp0ntpnt0xbzi",
       createdAt:new Date (),
       updatedAt:new Date ()
     },

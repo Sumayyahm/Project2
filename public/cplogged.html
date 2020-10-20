@@ -51,8 +51,7 @@
                         <!-- <li><a href="#">CONTACT</a></li> -->
                         <li><a href="about.html">ABOUT</a></li>
                         <!-- <li><a href="login.html">LOGIN</a></li> -->
-                        <button class="uk-button uk-button-text" type="button"
-                            uk-toggle="target: #offcanvas-reveal">Login</button>
+                        <button class="uk-button uk-button-text" type="button">Logout</button>
                     </ul>
                 </div>
 
@@ -93,8 +92,7 @@
                             <!-- <li><a href="#">CONTACT</a></li> -->
                             <li><a href="about.html">ABOUT</a></li>
                             <!-- <li><a href="login.html">LOGIN</a></li> -->
-                            <button class="uk-button uk-button-text" type="button"
-                                uk-toggle="target: #offcanvas-reveal">Login</button>
+                            <button class="uk-button uk-button-text" type="button">Logout</button>
                         </ul>
                     </div>
                 </div>
@@ -335,11 +333,10 @@
                     }
                     console.log(newSavedImg)
 
-                    $.post("/api/artwork", newSavedImg)
-                        .then(function (data) {
-                            console.log("add.html", data);
-                            alert("Adding character...");
-                        });
+                    // $.post("/api/artwork", newSavedImg)
+                    //     .then(function (data) {
+                    //         console.log("add.html", data);
+                    //     });
                 };
             }
 
