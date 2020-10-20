@@ -29,14 +29,11 @@ $(document).ready(function() {
         email: email,
         password: password
       })
-        .then(function(err,data) {
-
-          if(err){
-            handleLoginErr(err)
-          }
+        .then(function(data) {
           window.location.replace("/manager");
           // If there's an error, handle it by throwing up a bootstrap alert
         })
+        .catch(handleLoginErr)
     }
   
     function handleLoginErr(err) {
