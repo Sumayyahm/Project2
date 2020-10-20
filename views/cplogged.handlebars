@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/style.css"/>
+    <title>Esthete Gallery</title>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="../../public/js/script.js"></script>
+    <script type="text/javascript" src="../../public/js/signup.js"></script>
+</head>
+<body>
+    <header>
+    {{>navbar}}
+    </header>
+
+    <section>
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <h3 class="uk-card-title">Add Artist</h3>
+            <div id="upload">
+                <form class="uk-form-stacked">
+                
+                    <div class="uk-column-1-2">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Artist Name</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div> 
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Artist Phone</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div> 
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Artist Email</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Artist Bio</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="uk-button uk-button-default uk-button-small">Submit</button>
+                </form>
+            </div>
+        </div>    
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <h3 class="uk-card-title">Upload Artwork</h3>
+            <div id="upload">
+                <form class="uk-form-stacked">
+                
+                    <div class="uk-column-1-2">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Title</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Size</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div> 
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Price</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div> 
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Color Tone</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div> 
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Medium</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div>
+                        
+                         
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text"> Art Description</label>
+                            <div class="uk-form-controls uk-width-1-1">
+                                <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                            </div>
+                        </div> 
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Select Artist</label>
+                            <select class="uk-select">
+                                {{!-- <option>Artist 1</option>
+                                <option>Artist 2</option>
+                                <option>Artist 3</option>
+                                <option>Artist 4</option> --}}
+                                {{#each Artist}}
+                                <option>{{this.artist_name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>               
+                    
+                    </div>
+                    <div class="uk-placeholder uk-text-left">
+                        <span class="uk-text-center">Upload images of artwork by clicking</span>
+                        <button id="upload_widget" class="cloudinary-button">Here</button>
+                    </div>
+                    <button class="uk-button uk-button-default uk-button-small">Submit</button>
+                </form>
+            </div>
+        
+        </div>
+
+        
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <h3 class="uk-card-title">Schedule an Event</h3>
+            <form class="uk-form-stacked">
+
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Date</label>
+                    <div class="uk-form-controls uk-width-1-1">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="MM/DD/YYYY">
+                    </div>
+                </div> 
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Time</label>
+                    <div class="uk-form-controls uk-width-1-1">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                    </div>
+                </div> 
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Event Name</label>
+                    <div class="uk-form-controls uk-width-1-1">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                    </div>
+                </div>
+                
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Event Address</label>
+                    <div class="uk-form-controls uk-width-1-1">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <label class="uk-form-label" for="form-stacked-text">Event Description</label>
+                    <div class="uk-form-controls uk-width-1-1">
+                        <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
+                    </div>
+                </div>
+                <button class="uk-button uk-button-default uk-button-small">Submit</button>     
+            </form>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+            var myWidget = cloudinary.createUploadWidget({
+                cloudName: 'esthete',
+                uploadPreset: 'preset123'
+            }, (error, result) => {
+                if (!error && result && result.event === "success") {
+                    console.log('Done! Here is the image info: ', result.info);
+
+                    var newSavedImg = {
+                        imgUrl: result.info.url,
+                        publicId: result.info.public_id
+                    }
+                    console.log(newSavedImg)
+                    myWidget.close()
+
+                    $.post("/api/artwork", newSavedImg)
+                        .then(function (data) {
+                            console.log("add.html", data);
+                            
+                        });
+                };
+            }
+            )
+
+            
+
+            document.getElementById("upload_widget").addEventListener("click", function () {
+                event.stopPropagation();
+                event.preventDefault()
+
+                myWidget.open();
+            }, false);
+    </script>
+</body>
+</html>
