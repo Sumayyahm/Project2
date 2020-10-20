@@ -7,9 +7,11 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/index.html"))
     });
 
-    app.get("/manager", function(req,res) {
-
-        res.sendFile(path.join(__dirname, "../public/logged.html"))
+    app.get("/login", function(req,res) {
+        if (req.user) {
+            res.redirect("/members");
+          }
+        res.sendFile(path.join(__dirname, "../public/cplogged.html"))
     })
 
 }
