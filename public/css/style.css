@@ -3,12 +3,15 @@
     height: auto;
     float: left;
     margin: 20px;
-    /* margin: 20px; */
+    
     /* margin-bottom: 30px;
     margin-top: -40px; */
     /* width: 100%;
     max-width: 100%;
     height: auto; */
+}
+.img{
+    margin-top: -40px;
 }
 nav{
     /* margin-left: 100px; */
@@ -69,6 +72,9 @@ body{
 }
 #sidenav{
     text-align: center;
+}
+.uk-button{
+    
 }
 #upload_widget {
     color: #666;
