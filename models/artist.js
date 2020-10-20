@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             isURL: true
         },
-
+    },
         {
             freezeTableName: true
         });
