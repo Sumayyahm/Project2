@@ -1,72 +1,232 @@
-<div uk-sticky=" cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar" class="nav">
+<div class="uk-navbar-toggle-icon" class="nav">
         <nav class="uk-navbar" uk-navbar="mode: click">
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav" class="navi">
-                    <li class="uk-active"><a class="nav" href=".././index.html">HOME</a></li>
+            <div id="navi" class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li><a class="nav" href="#">HOME</a></li>
                     <li>
                         <a href="#">COLLECTION</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a class="collection" data-target="Surrealism" href="#">Surrealism</a></li>
-                                <li><a class="collection" data-target="Baroque" href="#">Baroque</a></li>
-                                <li><a class="collection" data-target="Cubism" href="#">Cubism</a></li>
-                                <li><a class="collection" data-target="Impressionism" href="#">Impressionism</a></li>
-                                <li><a class="collection" data-target="Expressionism" href="#">Expressionism</a></li>
-                                <li><a class="collection" data-target="Conceptual Art" href="#">Conceptual Art</a></li>
-                                <li><a class="collection" data-target="Rococo" href="#">Rococo</a></li>
+                                {{#each Style}}
+                                <li>
+                                    <a class="collection" data-target= "{{this.style_name}}">{{this.style_name}}</a>
+                                </li>
+                                {{/each}}
                             </ul>
                         </div>
                     </li>
                     <li><a href="#">ARTISTS</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a class ="artist" href="#">Andy Warhol</a></li>
-                                <li><a class ="artist" href="#">Pablo Picasso</a></li>
-                                <li><a class ="artist" href="#">Vincent Van Gogh</a></li>
-                                <li><a class ="artist" href="#">Leonardo da Vinci</a></li>
-                                <li><a class ="artist" href="#">Henri Matisse</a></li>
-                                <li><a class ="artist" href="#">Jackson Pollock</a></li>
-                                <li><a class ="artist" href="#">Edvard Munch</a></li>
+                                {{#each Artwork}}
+                                <li>
+                                    <a class="artist" data-target= "{{this.artist_name}}">{{this.artist_name}}</a>
+                                </li>
+                                {{/each}}
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#">EXHIBITIONS</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href=".././login.html">LOGIN</a></li>
+                    <li><a href="exhibition.html">EXHIBITIONS</a></li>
+                    <!-- <li><a href="#">CONTACT</a></li> -->
+                    <li><a href="about.html">ABOUT</a></li>
+                    <!-- <li><a href="login.html">LOGIN</a></li> -->
+                    <button class="uk-button uk-button-text" type="button"
+                        uk-toggle="target: #offcanvas-reveal">Login</button>
                 </ul>
-        
+            </div>
+
+
+            <div class="uk-navbar-nav" id="sidenav" uk-offcanvas="flip:true" class="uk-offcanvas">
+                <div class="uk-offcanvas-bar">
+                    <ul class="uk-nav ">
+
+                        <li class="uk-active"><a class="nav" href="#">HOME</a></li>
+                        <li>
+                            <a href="#" uk-toggle="target: #offcanvas-reveal-collection">COLLECTION</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    {{!-- <li><a href="#">Surrealism</a></li>
+                                    <li><a href="#">Baroque</a></li>
+                                    <li><a href="#">Cubism</a></li>
+                                    <li><a href="#">Impressionism</a></li>
+                                    <li><a href="#">Expressionism</a></li>
+                                    <li><a href="#">Conceptual Art</a></li>
+                                    <li><a href="#">Rococo</a></li> --}}
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#" uk-toggle="target: #offcanvas-reveal-artist">ARTISTS</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    {{!-- <li><a href="#">Andy Warhol</a></li>
+                                    <li><a href="#">Pablo Picasso</a></li>
+                                    <li><a href="#">Vincent Van Gogh</a></li>
+                                    <li><a href="#">Leonardo da Vinci</a></li>
+                                    <li><a href="#">Henri Matisse</a></li>
+                                    <li><a href="#">Jackson Pollock</a></li>
+                                    <li><a href="#">Edvard Munch</a></li> --}}
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="exhibition.html">EXHIBITIONS</a></li>
+                        <!-- <li><a href="#">CONTACT</a></li> -->
+                        <li><a href="about.html">ABOUT</a></li>
+                        <!-- <li><a href="login.html">LOGIN</a></li> -->
+                        <button class="uk-button uk-button-text" type="button"
+                            uk-toggle="target: #offcanvas-reveal">Login</button>
+                    </ul>
+                </div>
+            </div>
+            <div class="uk-navbar-right">
+
+                <a id="sidebartoggle" class="uk-navbar-toggle uk-navbar-right" uk-toggle="target: #sidenav"
+                    uk-navbar-toggle-icon href="#"></a>
             </div>
         </nav>
-        <img src=".././images/esthete.JPG" class="galleryname">
+        <div id="offcanvas-reveal-artist" uk-offcanvas="mode: reveal; overlay: true ;flip:true">
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
+                    <ul class="uk-list uk-link-text">
+                          {{#each Artwork}}
+                                <li>
+                                    <a class="artist" data-target= "{{this.artist_name}}">{{this.artist_name}}</a>
+                                </li>
+                           {{/each}}
+                    </ul>
+                </div>
+
+            </div>
         </div>
-        <br>
-        
+        <div id="offcanvas-reveal-collection" uk-offcanvas="mode: reveal; overlay: true ;flip:true">
+            <div class="uk-offcanvas-bar">
 
-        <div id="selected-style"> 
-            {{#each Style}} 
-        <h1>    {{this.style_name}}          </h1>
-        {{!-- <h2>    {{this.style_description}}        </h2> --}}
-            {{/each}}
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
+                    <ul class="uk-list uk-link-text">
+                       {{#each Style}}
+                                <li>
+                                    <a class="collection" data-target= "{{this.style_name}}">{{this.style_name}}</a>
+                                </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+            </div>
         </div>
-        <hr>
-        
-      
 
-    <ul class="artwork-display" id= "horizontal list">
-            {{#each Artwork}}
-        <li>
-            <img src={{this.artwork_image}} >
+        <div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true ;flip:true">
+            <div class="uk-offcanvas-bar">
 
-          <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Read More</a>
-          <div id="modal-center" class="uk-flex-top" uk-modal>
-          <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-          <button class="uk-modal-close-default" type="button" uk-close></button>
-            {{> art/art-work}}
-          </div>
-          </div>
-        </li>
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
+                    <div id="form">
 
-    </ul>
-        
- 
+                        <form class="signup">
+
+                            <div class="uk-margin">
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                    <input class="uk-input" id="email-input" type="email" placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="uk-margin">
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                    <input class="uk-input" type="password" id="password-input" placeholder="Password" >
+                                </div>
+                            </div>
+                            
+                            <p uk-margin>
+                                <button type="submit" class="uk-button uk-button-default uk-button-small">sign up</button>
+                            <p>or Log in <a href="" uk-toggle="target: #offcanvas-reveal-login">Here</a></p>
+                            </p>
+                        </form>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="offcanvas-reveal-login" uk-offcanvas="mode: reveal; overlay: true ;flip:true" id="loginposition">
+            <div class="uk-offcanvas-bar ">
+
+                <form class="login formtwo">
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input class="uk-input" id="email-input" type="email" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input class="uk-input" type="password" id="password-input" placeholder="Password" >
+                        </div>
+                    </div>
+                    
+                    <p uk-margin>
+                        <button type="submit" class="uk-button uk-button-default uk-button-small">Login</button>
+                    <p>or Sign up <a href="" uk-toggle="target: #offcanvas-reveal-signup">Here</a></p>
+                    </p>
+                </form>
+
+            </div>
+        </div>
+        <div id="offcanvas-reveal-signup" uk-offcanvas="mode: reveal; overlay: true ;flip:true">
+            <div class="uk-offcanvas-bar">
+
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
+                    <div id="form">
+
+                        <form class="signup">
+
+                            <div class="uk-margin">
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                    <input class="uk-input" id="email-input" type="email" placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="uk-margin">
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                    <input class="uk-input" type="password" id="password-input" placeholder="Password" >
+                                </div>
+                            </div>
+                            
+                            <p uk-margin>
+                                <button type="submit" class="uk-button uk-button-default uk-button-small">sign up</button>
+                            <p>or Log in <a href="" uk-toggle="target: #offcanvas-reveal-login">Here</a></p>
+                            </p>
+                        </form>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <img src="../public/images/esthete.JPG" class="galleryname">
+
+
+
+
+        <div class="uk-inline uk-margin .uk-width-1-1">
+            <div class="uk-background-image@s"><img src="../public/images/maningallery.jpg" alt="" class="img"></div>
+
+
+
+            <div class="uk-position-top uk-overlay uk-overlay-default uk-text-center img"></div>
+            <div class="uk-position-bottom uk-overlay uk-overlay-default uk-text-center img"></div>
+            <div class="uk-position-left uk-overlay uk-overlay-default uk-flex uk-flex-middle img"></div>
+            <div class="uk-position-right uk-overlay uk-overlay-default uk-flex uk-flex-middle img"></div>
+
+        </div>
+    </div>
