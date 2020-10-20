@@ -1,5 +1,5 @@
 require("../../routes/style-api.js");
-require("../../routes/artist-api.js");
+require("../../routes/artwork-api");
 
 $(function() {
     $(".collection").on("click", function(event) {
@@ -25,7 +25,7 @@ $(function() {
           artistname: artistName
         }
 
-        $.ajax("/api/artist/" + artistName, {
+        $.ajax("/api/artwork/" + artistName, {
             type: "GET",
             data: Artist
         });
