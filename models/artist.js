@@ -1,6 +1,3 @@
-  
-
-
 module.exports = function (sequelize, DataTypes) {
 
     var Artist = sequelize.define("Artist", {
@@ -34,17 +31,17 @@ module.exports = function (sequelize, DataTypes) {
             freezeTableName: true
         });
 
-    // Artist.associate = function (model) {
-    //     Artist.hasMany(model.Artwork, {
-    //         foreignKey: "artist_name",
-    //     })
-    //         // Artist.hasMany(model.Style, {
-    //         //     foreignKey: {
-    //         //         allowNull: false
-    //         //     },
-    //         //     onDelete: "cascade"
-    //         // });
-    // };
+    Artist.associate = function (model) {
+        Artist.hasMany(model.Artwork, {
+            foreignKey: "artist_name",
+        })
+            // Artist.hasMany(model.Style, {
+            //     foreignKey: {
+            //         allowNull: false
+            //     },
+            //     onDelete: "cascade"
+            // });
+    };
 
     return Artist;
 
