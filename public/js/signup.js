@@ -11,6 +11,7 @@ $(document).ready(function() {
         email: emailInput.val().trim(),
         password: passwordInput.val().trim()
       };
+      console.log(userData)
   
       if (!userData.email || !userData.password) {
         return;
@@ -28,11 +29,14 @@ $(document).ready(function() {
         email: email,
         password: password
       })
-        .then(function(data) {
+        .then(function(err,data) {
+
+          if(err){
+            handleLoginErr(err)
+          }
           window.location.replace("/cplogged");
           // If there's an error, handle it by throwing up a bootstrap alert
         })
-        .catch(handleLoginErr);
     }
   
     function handleLoginErr(err) {
