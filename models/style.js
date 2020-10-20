@@ -4,11 +4,11 @@ module.exports = function(sequelize, DataTypes) {
         style_name: {
             type: DataTypes.STRING,
             notNull: true,
-            len: [1, 60]
+            len: [1, 60],
+            primaryKey: true
         },
         style_description: {
             type: DataTypes.TEXT,
-            max: 200
         }
     }, 
     
@@ -16,18 +16,18 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true
     });
     
-    Style.associate = function(model) {
-        Style.belongsTo(model.Artwork, {
-            foreignKey: "style_name"
-        }),
+    // Style.associate = function(model) {
+    //     Style.belongsTo(model.Artwork, {
+    //         foreignKey: "style_name"
+    //     })
     
-        Style.belongsTo(model.Artist, {
-            foreignKey: {
-                allowNull: false
-              },
-            onDelete:"cascade"
-        });
-    };
+        // Style.belongsTo(model.Artist, {
+        //     foreignKey: {
+        //         allowNull: false
+        //       },
+        //     onDelete:"cascade"
+        // });
+    // };
     
     return Style;
     
