@@ -42,6 +42,21 @@ body{
     font-family: 'Cormorant Garamond', serif;
     font-family: 'Cormorant Garamond', serif; */
 }
+.formtwo{
+    text-align: center;
+    box-align: center;
+    margin-top: 100px;
+    margin-left: 2px;
+    /* box-align: center;
+    clear: both;
+    /* position: absolute;
+    left: 50%;
+    margin-left: 225px;
+    width: 450px; */
+    margin-top: 20%;
+    
+    
+}
 .uk-card-title{
     font-family: 'Cormorant Garamond', serif;
     color: gray;
@@ -70,7 +85,7 @@ body{
 }
 .events{
     font-family: 'Cormorant Garamond', serif;
-    
+
 }
 #navi{
     display: inline;
