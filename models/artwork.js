@@ -4,26 +4,33 @@ module.exports = function (sequelize, DataTypes) {
         artwork_name: {
             type: DataTypes.STRING,
             notNull: true,
-            len: [1, 60]
+            len: [1, 60],
+            primaryKey: true
         },
         style_name: {
             type: DataTypes.STRING,
             notNull: true,
-            len: [1, 60]
+            len: [1, 60],
+            references: {
+                model: "Style",
+                key: "style_name"
+            }
         },
         artist_name: {
             type: DataTypes.STRING,
             notNull: true,
-            unique: true,
-            len: [1,40]
+            len: [1,40],
+            references: {
+                model:"Artist",
+                key: "artist_name"
+            }
         },
         artwork_size: {
             type: DataTypes.STRING,
-            isAlphanumeric: true,
             notNull: true
         },
         artwork_descript: DataTypes.TEXT,
-
+        
         artwork_medium: {
             type: DataTypes.STRING,
             notNull: true,
@@ -35,19 +42,14 @@ module.exports = function (sequelize, DataTypes) {
             len: [1, 50]
         },
         artwork_price: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             notNull: true,
-            min: 3,
-            isDecimal: true
         },
         artwork_image: {
             type: DataTypes.STRING,
-            notNull: true,
-            isURL: true
         },
         artwork_pubID: {
             type: DataTypes.STRING,
-            notNull: true
         }
     },
 
@@ -57,15 +59,15 @@ module.exports = function (sequelize, DataTypes) {
 
 
     
-    Artwork.associate = function (model) {
-        Artwork.belongsTo(model.Artist, {
-            foreignKey: "artist_name",
-        }),
+    // Artwork.associate = function (model) {
+    //     // Artwork.belongsTo(model.Artist, {
+    //     //     foreignKey: "artist_name",
+    //     // }),
 
-        Artwork.hasMany(model.Style, {
-            foreignKey: "style_name",
-        });
-    };
+    //     Artwork.hasOne(model.Style, {
+    //         foreignKey: "style_name",
+    //     });
+    // };
 
 
 

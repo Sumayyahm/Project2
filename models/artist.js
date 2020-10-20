@@ -5,11 +5,13 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             notNull: true,
             unique: true,
-            len: [1, 40]
+            len: [1, 40],
+            primaryKey: true
         },
         artist_phone: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             notNull: true,
+            unique: true,
         },
         artist_email: {
             type: DataTypes.STRING,
@@ -25,22 +27,25 @@ module.exports = function (sequelize, DataTypes) {
             isURL: true
         }
     },
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0d0e5795b2c48fbfd54f76120347704e466ef97a
         {
             freezeTableName: true
         });
 
-    Artist.associate = function (model) {
-        Artist.hasMany(model.Artwork, {
-            foreignKey: "artist_name",
-        }),
-            Artist.hasMany(model.Style, {
-                foreignKey: {
-                    allowNull: false
-                },
-                onDelete: "cascade"
-            });
-    };
+    // Artist.associate = function (model) {
+    //     Artist.hasMany(model.Artwork, {
+    //         foreignKey: "artist_name",
+    //     })
+    //         // Artist.hasMany(model.Style, {
+    //         //     foreignKey: {
+    //         //         allowNull: false
+    //         //     },
+    //         //     onDelete: "cascade"
+    //         // });
+    // };
 
     return Artist;
 

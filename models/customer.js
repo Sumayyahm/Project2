@@ -7,9 +7,8 @@ var Customer = sequelize.define("customer", {
         len: [1,50]
     },
     customer_phone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         notNull: true,
-        isInt: true
     },
     customer_email: {
         type: DataTypes.STRING,
@@ -30,7 +29,6 @@ var Customer = sequelize.define("customer", {
     },
     customer_size: {
         type: DataTypes.STRING,
-        isAlphanumeric: true
     }
 }, 
 

@@ -1,20 +1,17 @@
 .galleryname {
-    width: 170px;
+    width: 200px;
     height: auto;
     float: left;
-    margin: 20px
+    margin: 20px;
+    
+    /* margin-bottom: 30px;
+    margin-top: -40px; */
+    /* width: 100%;
+    max-width: 100%;
+    height: auto; */
 }
-.img {
-    /* margin-top: 20px; */
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%; */
-    /* margin: 20px; */
-    margin-bottom: 30px;
+.img{
     margin-top: -40px;
-  
-
 }
 nav{
     /* margin-left: 100px; */
@@ -28,21 +25,64 @@ nav{
 body{
     font-family: 'Cormorant Garamond', serif;
 }
-
 .form{
     text-align: center;
     box-align: center;
+    margin-top: 100px;
+    margin-left: 2px;
+    /* box-align: center;
     clear: both;
     /* position: absolute;
     left: 50%;
     margin-left: 225px;
     width: 450px; */
     margin-top: 20%;
+    /* margin-top: 20%;
     margin-left: 20%;
     font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', serif; */
+}
+.uk-card-title{
+    font-family: 'Cormorant Garamond', serif;
+    color: gray;
 }
 .uk-button{
     color: gray;
+    
+}
+.uk-text-center{
+    width: 100%;
+}
+.uk-card{
+    clear: both;
+    /* width: 50%; */
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#upload{
+    clear: both;
+}
+#upcoming{
+    font-family: 'Cormorant Garamond', serif;
+    color: gray;
+    clear: both;
+    text-align: center;
+}
+.events{
+    font-family: 'Cormorant Garamond', serif;
+    
+}
+#navi{
+    display: inline;
+}
+#sidebar{
+    display: none;
+}
+#sidebartoggle{
+    display: none;
+}
+#sidenav{
+    text-align: center;
 }
 
 #upload_widget {
@@ -50,23 +90,42 @@ body{
     background-color: white;
     padding: initial;
 }
-
 #upload_widget:hover {
     transition: all .3s ease-in-out;
     color: white;
     background-color: #666;
 }
-
 #selected-style {
     font-family: 'Cormorant Garamond', serif;
     color: gray;
     margin-left: 55px;
-   
 }
-
 hr {
     margin-left: 55px;
     margin-right: 55px;
     color: gray;
     text-decoration-thickness: 5px;
+}
+ul#horizontal-list li {
+    display: inline;
+}
+#exhibition{
+    clear: both;
+}
+@media screen and (max-width: 1000px) {
+    #navi{
+        display: none;
+    }
+    #sidebar{
+        display: inline;
+    }
+    #sidebartoggle{
+        display: inline;
+        margin: 30px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .galleryname {
+        width: 100px;
+    }
 }
