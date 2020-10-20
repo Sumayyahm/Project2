@@ -14,13 +14,36 @@
     <script type="text/javascript" src="../../public/js/signup.js"></script>
 </head>
 <body>
-    <header>
+  <header>
     {{>navbar}}
-    </header>
+  </header>
 
-    <section>
-    {{{ body }}}
-    </section>
+  <section>
+        <div id="selected-style"> 
+        <h1>    {{artist_name}}          </h1>
+        </div>
+        <hr>
+
+    <ul class="artwork-display" id= "horizontal list">
+         {{#each Artwork}}
+        <li>
+            <img src={{this.artwork_image}} >
+
+          <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Read More</a>
+          <div id="modal-center" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <div>
+           <p>Name: {{artwork_name}}</p>
+           <p>Description : {{artwork_descript}}</p>
+          </div>
+          </div>
+          </div>
+          {{/each}}
+        </li>
+
+    </ul>
+
+  </section>
 </body>
 </html>
-        

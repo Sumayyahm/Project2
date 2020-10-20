@@ -3,8 +3,6 @@ module.exports = function(sequelize, DataTypes) {
     var Style = sequelize.define("Style", {
         style_name: {
             type: DataTypes.STRING,
-            notNull: true,
-            len: [1, 60],
             primaryKey: true
         },
         style_description: {
