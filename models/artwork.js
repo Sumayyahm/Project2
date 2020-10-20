@@ -1,50 +1,76 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function (sequelize, DataTypes) {
 
-var Artwork = sequelize.define("artwork", {
-    artwork_name: {
-        type: Datatypes.STRING,
-        notNull: true,
-        len: [1,60]
+    var Artwork = sequelize.define("Artwork", {
+        artwork_name: {
+            type: DataTypes.STRING,
+            notNull: true,
+            len: [1, 60],
+            primaryKey: true
+        },
+        style_name: {
+            type: DataTypes.STRING,
+            notNull: true,
+            len: [1, 60],
+            references: {
+                model: "Style",
+                key: "style_name"
+            }
+        },
+        artist_name: {
+            type: DataTypes.STRING,
+            notNull: true,
+            len: [1,40],
+            references: {
+                model:"Artist",
+                key: "artist_name"
+            }
+        },
+        artwork_size: {
+            type: DataTypes.STRING,
+            notNull: true
+        },
+        artwork_descript: DataTypes.TEXT,
+        
+        artwork_medium: {
+            type: DataTypes.STRING,
+            notNull: true,
+            len: [1, 100]
+        },
+        artwork_colortone: {
+            type: DataTypes.STRING,
+            notNull: true,
+            len: [1, 50]
+        },
+        artwork_price: {
+            type: DataTypes.STRING,
+            notNull: true,
+        },
+        artwork_image: {
+            type: DataTypes.STRING,
+        },
+        artwork_pubID: {
+            type: DataTypes.STRING,
+        }
     },
-    artwork_size: {
-        type: Datatypes.STRING,
-        isAlphanumeric: true,
-        notNull: true
-    },
-    artwork_descript: Datatypes.TEXT,
-    artwork_style: {
-       type: Datatypes.STRING,
-       notNull: true,
-       len: [1,100]
-    },
-    artwork_medium: {
-        type: Datatypes.STRING,
-        notNull: true,
-        len: [1,100]
-    },
-    artwork_colortone: {
-        type: Datatypes.STRING,
-        notNull: true,
-        len: [1,50]
-    },
-    artwork_price: {
-        type: Datatypes.INTEGER,
-        notNull: true,
-        min: 3,
-        isDecimal: true
-    }
-}, 
 
-{
-    freezeTableName: true
-});
+        {
+            freezeTableName: true
+        });
 
-Artwork.associate = function(models) {
-    Artwork.hasOne(models.Artist,{
-        onDelete: "cascade"
-    });
-};
 
-return Artwork;
+    
+    // Artwork.associate = function (model) {
+    //     // Artwork.belongsTo(model.Artist, {
+    //     //     foreignKey: "artist_name",
+    //     // }),
+
+    //     Artwork.hasOne(model.Style, {
+    //         foreignKey: "style_name",
+    //     });
+    // };
+
+
+
+    return Artwork;
 
 };
