@@ -43,16 +43,30 @@
         <br>
         
 
-        <h1 id="selected-style">
-            
-        </h1>
+        <div id="selected-style"> 
+            {{#each Style}} 
+        <h1>    {{this.style_name}}          </h1>
+        {{!-- <h2>    {{this.style_description}}        </h2> --}}
+            {{/each}}
+        </div>
         <hr>
+        
       
 
-        <div class="artwork-display">
-            
-            {{}}
+    <ul class="artwork-display" id= "horizontal list">
+            {{#each Artwork}}
+        <li>
+            <img src={{this.artwork_image}} >
 
-        </div>
+          <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Read More</a>
+          <div id="modal-center" class="uk-flex-top" uk-modal>
+          <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+            {{> art/art-work}}
+          </div>
+          </div>
+        </li>
+
+    </ul>
         
  

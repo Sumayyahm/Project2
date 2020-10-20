@@ -70,3 +70,7 @@ hr {
     color: gray;
     text-decoration-thickness: 5px;
 }
+
+ul#horizontal-list li {
+    display: inline;
+}
