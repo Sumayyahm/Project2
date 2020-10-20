@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>Esthete Gallery</title>
+</head>
+<body>
+    <div uk-sticky=" cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar" class="nav">
+        <nav class="uk-navbar" uk-navbar="mode: click">
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav" class="navi">
+                    <li><a href="index.html">HOME</a></li>
+                    <li>
+                        <a href="#">COLLECTION</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">Surrealism</a></li>
+                                <li><a href="#">Baroque</a></li>
+                                <li><a href="#">Cubism</a></li>
+                                <li><a href="#">Impressionism</a></li>
+                                <li><a href="#">Expressionism</a></li>
+                                <li><a href="#">Conceptual Art</a></li>
+                                <li><a href="#">Rococo</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">ARTISTS</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="#">Andy Warhol</a></li>
+                                <li><a href="#">Pablo Picasso</a></li>
+                                <li><a href="#">Vincent Van Gogh</a></li>
+                                <li><a href="#">Leonardo da Vinci</a></li>
+                                <li><a href="#">Henri Matisse</a></li>
+                                <li><a href="#">Jackson Pollock</a></li>
+                                <li><a href="#">Edvard Munch</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">EXHIBITIONS</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                </ul>
+        
+            </div>
+        </nav>
+        <img src="esthete.JPG" class="galleryname">
+    
+    <div  class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
+        <div  tabindex="0">
+            <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+                <form>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input class="uk-input" type="text">
+                        </div>
+                    </div>
+                
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input class="uk-input" type="text">
+                        </div>
+                    </div>
+                    <p uk-margin>
+                        <button class="uk-button uk-button-default uk-button-small">login</button>
+                    </p>
+                </form>
+            </div>
+        </div>    
+    </div>
+    
+    <!-- <img data-src="greygallery.jpeg" width="1800" height="1200" alt="" uk-img> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
+    
+</body>
+</html>
