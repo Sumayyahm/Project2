@@ -68,9 +68,9 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="../../exhibition.handlebars">EXHIBITIONS</a></li>
+                        <li><a href="/exhibitions">EXHIBITIONS</a></li>
                         <!-- <li><a href="#">CONTACT</a></li> -->
-                        <li><a href="../../about.handlebars">ABOUT</a></li>
+                        <li><a href="/about">ABOUT</a></li>
                         <!-- <li><a href="login.html">LOGIN</a></li> -->
                         <button class="uk-button uk-button-text" type="button"
                             uk-toggle="target: #offcanvas-reveal">Login</button>
@@ -88,13 +88,13 @@
 
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
                 <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
-                    <ul class="uk-list uk-link-text">
-                          {{#each Artwork}}
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                {{#each navArtists.Artist}}
                                 <li>
-                                    <a class="artist" data-name= "{{this.artist_name}}">{{this.artist_name}}</a>
+                                    <a class="artist" data-name= "{{this.dataValues.artist_name}}">{{this.dataValues.artist_name}}</a>
                                 </li>
-                           {{/each}}
-                    </ul>
+                                {{/each}}
+                            </ul>
                 </div>
 
             </div>
@@ -104,13 +104,13 @@
 
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
                 <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
-                    <ul class="uk-list uk-link-text">
-                       {{#each Style}}
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                {{#each navStyles.Style}}
                                 <li>
-                                    <a class="collection" data-target= "{{this.style_name}}">{{this.style_name}}</a>
+                                    <a class="collection" data-target= "{{this.dataValues.style_name}}">{{this.dataValues.style_name}}</a>
                                 </li>
-                        {{/each}}
-                    </ul>
+                                {{/each}}
+                            </ul>
                 </div>
 
             </div>
