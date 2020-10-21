@@ -7,9 +7,9 @@
                         <a href="#">COLLECTION</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                {{#each Style}}
+                                {{#each navStyles.Style}}
                                 <li>
-                                    <a class="collection" data-target= "{{this.style_name}}">{{this.style_name}}</a>
+                                    <a class="collection" data-target= "{{this.dataValues.style_name}}">{{this.dataValues.style_name}}</a>
                                 </li>
                                 {{/each}}
                             </ul>
@@ -18,9 +18,9 @@
                     <li><a href="#">ARTISTS</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                {{#each Artwork}}
+                                {{#each navArtists.Artist}}
                                 <li>
-                                    <a class="artist" data-target= "{{this.artist_name}}">{{this.artist_name}}</a>
+                                    <a class="artist" data-target= "{{this.dataValues.artist_name}}">{{this.dataValues.artist_name}}</a>
                                 </li>
                                 {{/each}}
                             </ul>
@@ -213,5 +213,5 @@
 
             </div>
         </div>
-        <img src="../../../public/images/esthete.JPG" class="galleryname">
+        <img src="../images/esthete.JPG" class="galleryname">
 </div>
