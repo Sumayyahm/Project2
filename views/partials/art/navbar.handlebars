@@ -2,14 +2,14 @@
         <nav class="uk-navbar" uk-navbar="mode: click">
             <div id="navi" class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
-                    <li><a class="nav" href="#">HOME</a></li>
+                    <li><a class="nav" href="/">HOME</a></li>
                     <li>
                         <a href="#">COLLECTION</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                {{#each Style}}
+                                {{#each navStyles.Style}}
                                 <li>
-                                    <a class="collection" data-target= "{{this.style_name}}">{{this.style_name}}</a>
+                                    <a class="collection" data-target= "{{this.dataValues.style_name}}">{{this.dataValues.style_name}}</a>
                                 </li>
                                 {{/each}}
                             </ul>
@@ -18,17 +18,17 @@
                     <li><a href="#">ARTISTS</a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                {{#each Artwork}}
+                                {{#each navArtists.Artist}}
                                 <li>
-                                    <a class="artist" data-target= "{{this.artist_name}}">{{this.artist_name}}</a>
+                                    <a class="artist" data-name= "{{this.dataValues.artist_name}}">{{this.dataValues.artist_name}}</a>
                                 </li>
                                 {{/each}}
                             </ul>
                         </div>
                     </li>
-                    <li><a href="../../exhibition.handlebars">EXHIBITIONS</a></li>
+                    <li><a href="/exhibitions">EXHIBITIONS</a></li>
                     <!-- <li><a href="#">CONTACT</a></li> -->
-                    <li><a href="../../about.handlebars">ABOUT</a></li>
+                    <li><a href="/about">ABOUT</a></li>
                     <!-- <li><a href="login.html">LOGIN</a></li> -->
                     <button class="uk-button uk-button-text" type="button"
                         uk-toggle="target: #offcanvas-reveal">Login</button>
@@ -91,7 +91,7 @@
                     <ul class="uk-list uk-link-text">
                           {{#each Artwork}}
                                 <li>
-                                    <a class="artist" data-target= "{{this.artist_name}}">{{this.artist_name}}</a>
+                                    <a class="artist" data-name= "{{this.artist_name}}">{{this.artist_name}}</a>
                                 </li>
                            {{/each}}
                     </ul>
@@ -159,14 +159,14 @@
                     <div class="uk-margin">
                         <div class="uk-inline">
                             <span class="uk-form-icon" uk-icon="icon: user"></span>
-                            <input class="uk-input" id="email-input" type="email" placeholder="Email">
+                            <input class="uk-input" id="email-verify" type="email" placeholder="Email">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <div class="uk-inline">
                             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                            <input class="uk-input" type="password" id="password-input" placeholder="Password" >
+                            <input class="uk-input" type="password" id="password-verify" placeholder="Password" >
                         </div>
                     </div>
                     
@@ -213,5 +213,6 @@
 
             </div>
         </div>
-        <img src="../../../public/images/esthete.JPG" class="galleryname">
+        <img src="../images/esthete.JPG" class="galleryname">
+        <br><br>
 </div>

@@ -1,49 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../public/css/style.css"/>
-    <title>Esthete Gallery</title>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script type="text/javascript" src="../../public/js/script.js"></script>
-    <script type="text/javascript" src="../../public/js/signup.js"></script>
-</head>
-<body>
-  <header>
-    {{>navbar}}
-  </header>
-
-  <section>
+        <br><br><br>
         <div id="selected-style"> 
-        <h1>    {{artist_name}}          </h1>
+        <h1 style="color: gray; font-family: 'Cormorant Garamond', serif; text-align:center">    {{artistHeader.artistname.dataValues.artist_name}}          </h1>
         </div>
         <hr>
 
     <ul class="artwork-display" id= "horizontal list">
-         {{#each Artwork}}
+         {{#each artistArtwork.Artwork}}
         <li>
-            <img src={{this.artwork_image}} >
-
-          <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Read More</a>
+            <img class="image" src={{this.dataValues.artwork_image}} >
+           <br><br>
+          <a class="uk-button uk-button-default button-position" href="#modal-center" uk-toggle>Read More</a>
           <div id="modal-center" class="uk-flex-top" uk-modal>
           <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
           <button class="uk-modal-close-default" type="button" uk-close></button>
           <div>
-           <p>Name: {{artwork_name}}</p>
-           <p>Description : {{artwork_descript}}</p>
+           <p>Name: {{this.dataValues.artwork_name}}</p>
+           <p>Description : {{this.dataValues.artwork_descript}}</p>
           </div>
           </div>
           </div>
+          <br><br>
+          </li>
           {{/each}}
-        </li>
+        
 
     </ul>
 
-  </section>
-</body>
-</html>
