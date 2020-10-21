@@ -14,13 +14,13 @@ module.exports = {
       updatedAt: new Date(),
         }, {
       style_name: 'Impressionism',
-      style_description: "Baroque is a style of architecture, music, dance, painting, sculpture and other arts that flourished in Europe from the early 17th century until the 1740s. In the territories of the Spanish and Portuguese empires including the Iberian Peninsula it continued, together with new styles, until the first decade of the 1800s. It followed Renaissance art and Mannerism and preceded the Rococo (in the past often referred to as 'late Baroque') and Neoclassical styles. It was encouraged by the Catholic Church as a means to counter the simplicity and austerity of Protestant architecture, art and music, though Lutheran Baroque art developed in parts of Europe as well.",
+      style_description: "Impressionism is a 19th-century art movement characterized by relatively small, thin, yet visible brush strokes, open composition, emphasis on accurate depiction of light in its changing qualities (often accentuating the effects of the passage of time), ordinary subject matter, inclusion of movement as a crucial element of human perception and experience, and unusual visual angles. Impressionism originated with a group of Paris-based artists whose independent exhibitions brought them to prominence during the 1870s and 1880s.",
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       style_name: 'Boroque',
-      style_description: "Impressionism is a 19th-century art movement characterized by relatively small, thin, yet visible brush strokes, open composition, emphasis on accurate depiction of light in its changing qualities (often accentuating the effects of the passage of time), ordinary subject matter, inclusion of movement as a crucial element of human perception and experience, and unusual visual angles. Impressionism originated with a group of Paris-based artists whose independent exhibitions brought them to prominence during the 1870s and 1880s.",
+      style_description: "Baroque is a style of architecture, music, dance, painting, sculpture and other arts that flourished in Europe from the early 17th century until the 1740s. In the territories of the Spanish and Portuguese empires including the Iberian Peninsula it continued, together with new styles, until the first decade of the 1800s. It followed Renaissance art and Mannerism and preceded the Rococo (in the past often referred to as 'late Baroque') and Neoclassical styles. It was encouraged by the Catholic Church as a means to counter the simplicity and austerity of Protestant architecture, art and music, though Lutheran Baroque art developed in parts of Europe as well.",
       createdAt: new Date(),
       updatedAt: new Date(),
     },
