@@ -1,6 +1,6 @@
         <br><br><br>
         <div id="selected-style"> 
-        <h1 style="color: gray; font-family: 'Cormorant Garamond', serif;">    {{artistHeader.artistname.dataValues.artist_name}}          </h1>
+        <h1 style="color: gray; font-family: 'Cormorant Garamond', serif; text-align:center">    {{artistHeader.artistname.dataValues.artist_name}}          </h1>
         </div>
         <hr>
 
@@ -8,8 +8,8 @@
          {{#each artistArtwork.Artwork}}
         <li>
             <img class="image" src={{this.dataValues.artwork_image}} >
-
-          <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Read More</a>
+           <br><br>
+          <a class="uk-button uk-button-default button-position" href="#modal-center" uk-toggle>Read More</a>
           <div id="modal-center" class="uk-flex-top" uk-modal>
           <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
           <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -19,8 +19,10 @@
           </div>
           </div>
           </div>
+          <br><br>
+          </li>
           {{/each}}
-        </li>
+        
 
     </ul>
 
