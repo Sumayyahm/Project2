@@ -57,40 +57,17 @@
 
             <div class="uk-navbar-nav" id="sidenav" uk-offcanvas="flip:true" class="uk-offcanvas">
                 <div class="uk-offcanvas-bar">
-                    <ul class="uk-nav ">
+                    <ul class="uk-list " id="sidenavlist">
 
-                        <li class="uk-active"><a class="nav" href="index.html">HOME</a></li>
+                        <li><a class="nav" href="index.html">Home</a></li>
                         <li>
-                            <a href="#" uk-toggle="target: #offcanvas-reveal-collection">COLLECTION</a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Surrealism</a></li>
-                                    <li><a href="#">Baroque</a></li>
-                                    <li><a href="#">Cubism</a></li>
-                                    <li><a href="#">Impressionism</a></li>
-                                    <li><a href="#">Expressionism</a></li>
-                                    <li><a href="#">Conceptual Art</a></li>
-                                    <li><a href="#">Rococo</a></li>
-                                </ul>
-                            </div>
+                            <a href="#" uk-toggle="target: #offcanvas-reveal-collection">Collection</a>
                         </li>
-                        <li><a href="#" uk-toggle="target: #offcanvas-reveal-artist">ARTISTS</a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Andy Warhol</a></li>
-                                    <li><a href="#">Pablo Picasso</a></li>
-                                    <li><a href="#">Vincent Van Gogh</a></li>
-                                    <li><a href="#">Leonardo da Vinci</a></li>
-                                    <li><a href="#">Henri Matisse</a></li>
-                                    <li><a href="#">Jackson Pollock</a></li>
-                                    <li><a href="#">Edvard Munch</a></li>
-                                </ul>
-                            </div>
+                        <li><a href="#" uk-toggle="target: #offcanvas-reveal-artist">Artists</a>
+                
                         </li>
-                        <li><a href="exhibition.html">EXHIBITIONS</a></li>
-                        <!-- <li><a href="#">CONTACT</a></li> -->
-                        <li><a href="about.html">ABOUT</a></li>
-                        <!-- <li><a href="login.html">LOGIN</a></li> -->
+                        <li><a href="exhibition.html">Exhibitions</a></li>
+                        <li><a href="about.html">About</a></li>
                         <button class="uk-button uk-button-text" type="button"
                             uk-toggle="target: #offcanvas-reveal">Login</button>
                     </ul>
@@ -125,7 +102,7 @@
 
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
                 <div class="form" class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match" uk-grid>
-                    <ul class="uk-list uk-link-text">
+                    <ul class="uk-list uk-link-text" id="stylelist">
                         <li><a href="#">Surrealism</a></li>
                         <li><a href="#">Baroque</a></li>
                         <li><a href="#">Cubism</a></li>
@@ -236,7 +213,7 @@
 
             </div>
         </div>
-        <img src="../public/images/esthete.JPG" class="galleryname">
+        <img src="../public/images/Logo.JPG" class="galleryname">
     </div>
     <h2 id="upcoming">Upcoming Events</h2>
     <ul class="uk-grid-large uk-child-width-1-2 uk-child-width-1-1 uk-text-center" uk-sortable="handle: .uk-card" uk-grid>
