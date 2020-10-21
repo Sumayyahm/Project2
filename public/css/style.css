@@ -4,17 +4,12 @@
     float: left;
     margin: 20px;
     
-    /* margin-bottom: 30px;
-    margin-top: -40px; */
-    /* width: 100%;
-    max-width: 100%;
-    height: auto; */
+    
 }
 .img{
     margin-top: -40px;
 }
 nav{
-    /* margin-left: 100px; */
     float: right;
     font-family: 'Cormorant Garamond', serif;
     margin-right: 20px;
@@ -30,29 +25,16 @@ body{
     box-align: center;
     margin-top: 100px;
     margin-left: 2px;
-    /* box-align: center;
-    clear: both;
-    /* position: absolute;
-    left: 50%;
-    margin-left: 225px;
-    width: 450px; */
+    
     margin-top: 20%;
-    /* margin-top: 20%;
-    margin-left: 20%;
-    font-family: 'Cormorant Garamond', serif;
-    font-family: 'Cormorant Garamond', serif; */
+    
 }
 .formtwo{
     text-align: center;
     box-align: center;
     margin-top: 100px;
     margin-left: 2px;
-    /* box-align: center;
-    clear: both;
-    /* position: absolute;
-    left: 50%;
-    margin-left: 225px;
-    width: 450px; */
+    
     margin-top: 20%;
     
     
@@ -70,7 +52,6 @@ body{
 }
 .uk-card{
     clear: both;
-    /* width: 50%; */
     margin-left: 20%;
     margin-right: 20%;
 }
@@ -98,6 +79,13 @@ body{
 }
 #sidenav{
     text-align: center;
+    
+}
+#sidenavlist{
+    margin-top: 50px;
+}
+#stylelist{
+    margin-left: 30px;
 }
 
 #upload_widget {
@@ -127,6 +115,8 @@ ul#horizontal-list li {
 #exhibition{
     clear: both;
 }
+
+
 @media screen and (max-width: 1000px) {
     #navi{
         display: none;
@@ -139,8 +129,16 @@ ul#horizontal-list li {
         margin: 30px;
     }
 }
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 414px) {
     .galleryname {
         width: 100px;
+    }
+    .boarder{
+        display: none;
+    }
+    .img{
+        margin-top: -80px;
+        height: auto;
+        width: max-content;
     }
 }
