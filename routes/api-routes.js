@@ -10,6 +10,8 @@ module.exports = function(app) {
       res.json(req.user);
     });
     app.post("/api/signup", function(req, res) {
+        console.log("got to route")
+        console.log(req.body)
         db.User.create({
           email: req.body.email,
           password: req.body.password
@@ -18,6 +20,7 @@ module.exports = function(app) {
             res.redirect(307, "/");
           })
           .catch(function(err) {
+            console.log(err)
             res.status(401).json(err);
           });
       });

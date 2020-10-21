@@ -1,19 +1,16 @@
-require("../../routes/style-api.js");
-require("../../routes/artwork-api");
+var db = require("../../models")
+
 
 $(function() {
     $(".collection").on("click", function(event) {
         var styleName = $(this).data("target");
-        window.location.href= "views/collection.handlebars"
+        window.location.href= "/collection/" + styleName
         // console.log(styleName);
         // event.preventDefault();
-        var Style = {
-            StyleName : styleName
-        }
-
+       
         $.ajax("/api/style/" + styleName, {
             type: "GET",
-            data: Style
+            data: {StyleName:styleName
         });
         
     });
