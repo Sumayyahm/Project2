@@ -1,7 +1,19 @@
     <br>
     <h2 id="upcoming">Upcoming Events</h2>
     <ul class="uk-grid-large uk-child-width-1-2 uk-child-width-1-1 uk-text-center" uk-sortable="handle: .uk-card" uk-grid>
+         {{#each exhibitData.Exhibit}} 
         <li>
+            <div class="uk-card uk-card-default uk-card-body events">
+                <p><strong>Event Name: {{this.dataValues.exhibit_name}}</strong> </p>
+                <p>Date: {{this.dataValues.date}}</p>
+                <p>Time: {{this.dataValues.time}}</p>
+                <p>Description: {{this.dataValues.exhibit_descript}}</p>
+                <p>Address: {{this.dataValues.exhibit_address}}</p>
+            </div>
+        </li>
+        {{/each}}
+        </ul>
+        {{!-- <li>
             <div class="uk-card uk-card-default uk-card-body events">
                 <p><strong>Event Name</strong> </p>
                 <p>Date:</p>
@@ -27,15 +39,6 @@
                 <p>Description:</p>
                 <p>Address:</p>
             </div>
-        </li>
-        <li>
-            <div class="uk-card uk-card-default uk-card-body events">
-                <p><strong>Event Name</strong> </p>
-                <p>Date:</p>
-                <p>Time:</p>
-                <p>Description:</p>
-                <p>Address:</p>
-            </div>
-        </li>
+        </li> --}}
              
-    </ul>
+    

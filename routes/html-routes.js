@@ -145,17 +145,25 @@ module.exports = function (app) {
                 var styleObj ={
                     Style:dbStyle
                 }
+
+                db.Exhibit.findAll({}).then(function(dataExhibit){
+                    
+                    var exhibitObj = {
+                        Exhibit: dataExhibit
+                    }
+                
     
                 var headerData = {
                     navStyles:styleObj,
-                    navArtists: artistObj
+                    navArtists: artistObj,
+                    exhibitData: exhibitObj
                 }
 
-
                 res.render("exhibition", headerData)
-                // console.log(headerData.navArtists.Artist)
-            })
-        })  
+               console.log(headerData.exhibitData.Exhibit)
+            });
+          });
+        });  
     });
 
     app.get("/about", function (req, res) {
