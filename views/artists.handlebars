@@ -1,12 +1,12 @@
         <br><br><br>
-        <div id="selected-style"> 
-        <h1 style="color: gray; font-family: 'Cormorant Garamond', serif; text-align:center">    {{artistHeader.artistname.dataValues.artist_name}}          </h1>
+        <div> 
+        <h1 class="h1tag">    {{artistHeader.artistname.dataValues.artist_name}}          </h1>
         </div>
         <hr>
 
     <ul class="artwork-display" id= "horizontal list">
          {{#each artistArtwork.Artwork}}
-        <li>
+         <li>
             <img class="image" src={{this.dataValues.artwork_image}} >
            <br><br>
           <a class="uk-button uk-button-default button-position" href="#modal-center" uk-toggle>Read More</a>
