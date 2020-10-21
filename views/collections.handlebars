@@ -1,6 +1,6 @@
        <br><br><br>
        <div id="selected-style"> 
-        <h1 style="color: gray; font-family: 'Cormorant Garamond', serif;">    {{collStyle.Style.dataValues.style_name}}          </h1>
+        <h1 style="color: gray; font-family: 'Cormorant Garamond', serif; text-align:center">    {{collStyle.Style.dataValues.style_name}}          </h1>
         </div>
         <hr>
         
@@ -9,9 +9,9 @@
         <ul class="artwork-display" id= "horizontal list">
             {{#each collArtwork.Artwork}}
             <li>
-               <img class="image" ;" src={{this.dataValues.artwork_image}} >
-
-               <a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Read More</a>
+               <img class="image" ; src={{this.dataValues.artwork_image}} >
+                <br><br>
+               <a class="uk-button uk-button-default button-position" href="#modal-center" uk-toggle>Read More</a>
                <div id="modal-center" class="uk-flex-top" uk-modal>
                 <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
                  <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -21,6 +21,7 @@
                </div>
                </div>
                </div>
+                <br><br>
             </li>
             {{/each}}
         </ul>
