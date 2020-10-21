@@ -186,7 +186,7 @@ module.exports = function (app) {
 
     app.get("/manager", isAuthenticated, function (req, res) {
 
-        res.sendFile(path.join(__dirname, "../public/cplogged.html"))
+        res.render("cplogged")
     })
 
 }
