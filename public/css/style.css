@@ -132,6 +132,17 @@ ul#horizontal-list li {
 #exhibition{
     clear: both;
 }
+#about{
+    font-size: larger;
+   
+}
+#aboutcard{
+    margin-top: 30px;
+}
+#story{
+text-align: center;
+font-size: 32px;
+}
 
 
 @media screen and (max-width: 1000px) {
