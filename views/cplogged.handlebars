@@ -23,32 +23,32 @@
                 
                     <div class="uk-column-1-2">
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Artist Name</label>
+                            <label class="uk-form-label artist-input" for="form-stacked-text">Artist Name</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div> 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Artist Phone</label>
+                            <label class="uk-form-label phone-input" for="form-stacked-text">Artist Phone</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div> 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Artist Email</label>
+                            <label class="uk-form-label email-input" for="form-stacked-text">Artist Email</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Artist Bio</label>
+                            <label class="uk-form-label bio-input" for="form-stacked-text">Artist Bio</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div>
 
                     </div>
-                    <button class="uk-button uk-button-default uk-button-small">Submit</button>
+                    <button class="uk-button uk-button-default uk-button-small artist-submit">Submit</button>
                 </form>
             </div>
         </div>    
@@ -59,31 +59,31 @@
                 
                     <div class="uk-column-1-2">
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Title</label>
+                            <label class="uk-form-label title-input" for="form-stacked-text">Title</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Size</label>
+                            <label class="uk-form-label size-input" for="form-stacked-text">Size</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div> 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Price</label>
+                            <label class="uk-form-label price-input" for="form-stacked-text">Price</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div> 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Color Tone</label>
+                            <label class="uk-form-label colortone-input" for="form-stacked-text">Color Tone</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div> 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Medium</label>
+                            <label class="uk-form-label medium-input" for="form-stacked-text">Medium</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
@@ -91,30 +91,42 @@
                         
                          
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text"> Art Description</label>
+                            <label class="uk-form-label artdescription-input" for="form-stacked-text"> Art Description</label>
                             <div class="uk-form-controls uk-width-1-1">
                                 <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                             </div>
                         </div> 
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Select Artist</label>
+                            <label class="uk-form-label artist-select" for="form-stacked-text">Select Artist</label>
                             <select class="uk-select">
                                 {{!-- <option>Artist 1</option>
                                 <option>Artist 2</option>
                                 <option>Artist 3</option>
                                 <option>Artist 4</option> --}}
-                                {{#each Artist}}
-                                <option>{{this.artist_name}}</option>
+                                {{#each navArtists.Artist}}
+                                <option>{{this.dataValues.artist_name}}</option>
                                 {{/each}}
                             </select>
-                        </div>               
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label style-select" for="form-stacked-text">Select Style</label>
+                            <select class="uk-select">
+                                {{!-- <option>Artist 1</option>
+                                <option>Artist 2</option>
+                                <option>Artist 3</option>
+                                <option>Artist 4</option> --}}
+                                {{#each navStyles.Style}}
+                                <option>{{this.dataValues.style_name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>                    
                     
                     </div>
                     <div class="uk-placeholder uk-text-left">
                         <span class="uk-text-center">Upload images of artwork by clicking</span>
                         <button id="upload_widget" class="cloudinary-button">Here</button>
+                        <button id="styleartist-test">Test!</button>
                     </div>
-                    <button class="uk-button uk-button-default uk-button-small">Submit</button>
                 </form>
             </div>
         
@@ -126,37 +138,37 @@
             <form class="uk-form-stacked">
 
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Date</label>
+                    <label class="uk-form-label eventdate-input" for="form-stacked-text">Date</label>
                     <div class="uk-form-controls uk-width-1-1">
                         <input class="uk-input" id="form-stacked-text" type="text" placeholder="MM/DD/YYYY">
                     </div>
                 </div> 
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Time</label>
+                    <label class="uk-form-label eventtime-input" for="form-stacked-text">Time</label>
                     <div class="uk-form-controls uk-width-1-1">
                         <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                     </div>
                 </div> 
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Event Name</label>
+                    <label class="uk-form-label eventname-input" for="form-stacked-text">Event Name</label>
                     <div class="uk-form-controls uk-width-1-1">
                         <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                     </div>
                 </div>
                 
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Event Address</label>
+                    <label class="uk-form-label eventaddress-input" for="form-stacked-text">Event Address</label>
                     <div class="uk-form-controls uk-width-1-1">
                         <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                     </div>
                 </div>
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Event Description</label>
+                    <label class="uk-form-label eventdescription-input" for="form-stacked-text">Event Description</label>
                     <div class="uk-form-controls uk-width-1-1">
                         <input class="uk-input" id="form-stacked-text" type="text" placeholder="">
                     </div>
                 </div>
-                <button class="uk-button uk-button-default uk-button-small">Submit</button>     
+                <button class="uk-button uk-button-default uk-button-small event-submit">Submit</button>     
             </form>
         </div>
     </section>

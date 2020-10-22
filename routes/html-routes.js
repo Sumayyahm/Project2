@@ -8,20 +8,20 @@ module.exports = function (app) {
 
     app.get("/", function (req, res) {
 
-        db.Artist.findAll({}).then(function (dbArtist) {        
+        db.Artist.findAll({}).then(function (dbArtist) {
 
             var artistObj = {
                 Artist: dbArtist
             }
 
-            db.Style.findAll({}).then(function(dbStyle){
+            db.Style.findAll({}).then(function (dbStyle) {
 
-                var styleObj ={
-                    Style:dbStyle
+                var styleObj = {
+                    Style: dbStyle
                 }
-    
+
                 var headerData = {
-                    navStyles:styleObj,
+                    navStyles: styleObj,
                     navArtists: artistObj
                 }
 
@@ -32,156 +32,156 @@ module.exports = function (app) {
 
         })
 
-        
+
 
     });
 
-    app.get("/collection/:style_name", function(req,res){
-        db.Artist.findAll({}).then(function (dbArtist) {        
+    app.get("/collection/:style_name", function (req, res) {
+        db.Artist.findAll({}).then(function (dbArtist) {
 
             var artistObj = {
                 Artist: dbArtist
             }
 
-            db.Style.findAll({}).then(function(dbStyle){
+            db.Style.findAll({}).then(function (dbStyle) {
 
-                var styleObjNav ={
-                    Style:dbStyle
-                }
-       
-        db.Style.findOne({
-            where: {
-                style_name: req.params.style_name
-            }
-        }).then(function(styleData){
-
-            var styleObj = {
-                Style: styleData
-            }
-
-            db.Artwork.findAll({
-                where: {
-                    style_name: req.params.style_name
-                }
-            }).then(function(artworkData){
-                
-                var artworkObj ={
-                    Artwork: artworkData
+                var styleObjNav = {
+                    Style: dbStyle
                 }
 
-                var collectionsData = {
-                    collArtwork:artworkObj,
-                    collStyle: styleObj,
-                    navStyles:styleObjNav,
-                    navArtists: artistObj
-                }
-                
-    
-                res.render("collections", collectionsData);
-                console.log(collectionsData.collArtwork.Artwork);
+                db.Style.findOne({
+                    where: {
+                        style_name: req.params.style_name
+                    }
+                }).then(function (styleData) {
+
+                    var styleObj = {
+                        Style: styleData
+                    }
+
+                    db.Artwork.findAll({
+                        where: {
+                            style_name: req.params.style_name
+                        }
+                    }).then(function (artworkData) {
+
+                        var artworkObj = {
+                            Artwork: artworkData
+                        }
+
+                        var collectionsData = {
+                            collArtwork: artworkObj,
+                            collStyle: styleObj,
+                            navStyles: styleObjNav,
+                            navArtists: artistObj
+                        }
+
+
+                        res.render("collections", collectionsData);
+                        console.log(collectionsData.collArtwork.Artwork);
+                    })
+                })
             })
         })
     })
-})
-})
 
-    app.get("/artist/:artistName", function(req,res) {
-        db.Artist.findAll({}).then(function (dbArtist) {        
+    app.get("/artist/:artistName", function (req, res) {
+        db.Artist.findAll({}).then(function (dbArtist) {
 
             var artistObj = {
                 Artist: dbArtist
             }
 
-            db.Style.findAll({}).then(function(dbStyle){
+            db.Style.findAll({}).then(function (dbStyle) {
 
-                var styleObjNav ={
-                    Style:dbStyle
+                var styleObjNav = {
+                    Style: dbStyle
                 }
 
                 db.Artist.findOne({
                     where: {
                         artist_name: req.params.artistName
                     }
-                }).then(function(artistName){
-                    var artistDispName ={
+                }).then(function (artistName) {
+                    var artistDispName = {
                         artistname: artistName
                     }
-             
-                db.Artwork.findAll({
-                    where: {
-                        artist_name: req.params.artistName
-                    }
-                }).then(function(artworkData){
-                    
-                    var artworkObj ={
-                        Artwork: artworkData
-                    }
 
-                    var artistData = {
-                        artistArtwork:artworkObj,
-                        artistHeader: artistDispName,
-                        navStyles:styleObjNav,
-                        navArtists: artistObj
-                    }
+                    db.Artwork.findAll({
+                        where: {
+                            artist_name: req.params.artistName
+                        }
+                    }).then(function (artworkData) {
 
-                    res.render("artists", artistData);
-                    console.log(artistData.artistHeader)
+                        var artworkObj = {
+                            Artwork: artworkData
+                        }
+
+                        var artistData = {
+                            artistArtwork: artworkObj,
+                            artistHeader: artistDispName,
+                            navStyles: styleObjNav,
+                            navArtists: artistObj
+                        }
+
+                        res.render("artists", artistData);
+                        console.log(artistData.artistHeader)
+                    })
                 })
             })
-         })
-      })
+        })
     })
 
     app.get("/exhibitions", function (req, res) {
 
-        db.Artist.findAll({}).then(function (dbArtist) {        
+        db.Artist.findAll({}).then(function (dbArtist) {
 
             var artistObj = {
                 Artist: dbArtist
             }
 
-            db.Style.findAll({}).then(function(dbStyle){
+            db.Style.findAll({}).then(function (dbStyle) {
 
-                var styleObj ={
-                    Style:dbStyle
+                var styleObj = {
+                    Style: dbStyle
                 }
 
-                db.Exhibit.findAll({}).then(function(dataExhibit){
-                    
+                db.Exhibit.findAll({}).then(function (dataExhibit) {
+
                     var exhibitObj = {
                         Exhibit: dataExhibit
                     }
-                
-    
-                var headerData = {
-                    navStyles:styleObj,
-                    navArtists: artistObj,
-                    exhibitData: exhibitObj
-                }
 
-                res.render("exhibition", headerData)
-               console.log(headerData.exhibitData.Exhibit)
+
+                    var headerData = {
+                        navStyles: styleObj,
+                        navArtists: artistObj,
+                        exhibitData: exhibitObj
+                    }
+
+                    res.render("exhibition", headerData)
+                    console.log(headerData.exhibitData.Exhibit)
+                });
             });
-          });
-        });  
+        });
     });
 
     app.get("/about", function (req, res) {
 
-        db.Artist.findAll({}).then(function (dbArtist) {        
+        db.Artist.findAll({}).then(function (dbArtist) {
 
             var artistObj = {
                 Artist: dbArtist
             }
 
-            db.Style.findAll({}).then(function(dbStyle){
+            db.Style.findAll({}).then(function (dbStyle) {
 
-                var styleObj ={
-                    Style:dbStyle
+                var styleObj = {
+                    Style: dbStyle
                 }
-    
+
                 var headerData = {
-                    navStyles:styleObj,
+                    navStyles: styleObj,
                     navArtists: artistObj
                 }
 
@@ -189,12 +189,31 @@ module.exports = function (app) {
                 res.render("about", headerData)
                 // console.log(headerData.navArtists.Artist)
             })
-        })  
+        })
     });
 
     app.get("/manager", isAuthenticated, function (req, res) {
+        db.Artist.findAll({}).then(function (dbArtist) {
 
-        res.render("cplogged")
+            var artistObj = {
+                Artist: dbArtist
+            }
+
+            db.Style.findAll({}).then(function (dbStyle) {
+
+                var styleObj = {
+                    Style: dbStyle
+                }
+
+                var headerData = {
+                    navStyles: styleObj,
+                    navArtists: artistObj
+                }
+
+
+                res.render("cplogged", headerData)
+            })
+        })
     })
 
 }
