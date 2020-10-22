@@ -27,7 +27,7 @@ app.set("view engine", "handlebars");
 require("./routes/api-routes.js")(app)
 require("./routes/artist-api.js")(app);
 require("./routes/artwork-api.js")(app);
-require("./routes/customer-api.js")(app);
+require("./routes/exhibit-api.js")(app);
 require("./routes/style-api.js")(app);
 require("./routes/html-routes.js")(app);
 
@@ -61,7 +61,7 @@ db.sequelize.sync({}).then(function () {
   require("./routes/api-routes.js")(app)
   require("./routes/artist-api.js")(app);
   require("./routes/artwork-api.js")(app);
-  require("./routes/customer-api.js")(app);
+  require("./routes/exhibit-api.js")(app);
   require("./routes/style-api.js")(app);
   require("./routes/html-routes.js")(app);
   
