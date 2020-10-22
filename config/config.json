@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Pookie_25?!",
+=======
+    "password": "Youaremybootcamp1!",
+>>>>>>> 54943e5459f87deb917a2d496f64f52c44e95077
     "database": "gallery_db",
     "host": "127.0.0.1",
     "port": 3306,
@@ -16,6 +20,11 @@
     "dialect": "mysql"
   },
   "production": {
+<<<<<<< HEAD
     "use_env_variable":"DATABASE_URL"
+=======
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+>>>>>>> 54943e5459f87deb917a2d496f64f52c44e95077
   }
 }
