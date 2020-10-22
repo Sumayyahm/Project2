@@ -17,28 +17,17 @@ $(document).ready(function() {
       if (!userData.email || !userData.password) {
         return;
       }
-      // If we have an email and password, run the signUpUser function
-      signUpUser(userData.email, userData.password);
-      emailInput.val("");
-      passwordInput.val("");
-    });
-  
-    // Does a post to the signup route. If successful, we are redirected to the members page
-    // Otherwise we log any errors
-    function signUpUser(email, password) {
-      $.post("/api/signup", {
-        email: email,
-        password: password
-      })
-        .then(function(data) {
-          window.location.replace("/manager");
-          // If there's an error, handle it by throwing up a bootstrap alert
-        })
-        .catch(function(){
+      
+      $.post("api/signup", userData)
+      .then(function(data){
 
-          alert("Please use existing login credentials for user")
-        })
-    }
-  
-  
+        alert("User has been created. Only one user can currently exist in the system - please use the login credentials you provided to log into the existing account in the future.")
+      })
+      .fail(function(err){
+        alert("A User already exists in the system. Please use the existing login credentials to log into the account.")
+      })
+    
+    emailInput.val("");
+    passwordInput.val("");
   });
+});
