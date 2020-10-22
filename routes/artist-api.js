@@ -58,7 +58,7 @@ module.exports = function (app) {
 
     // ADD an artist 
     app.post("/api/artist", function (req, res) {
-        db.Artist.create(req,body).then(function(dbArtist) {
+        db.Artist.create(req.body).then(function(dbArtist) {
             res.json(dbArtist)
         });
     });

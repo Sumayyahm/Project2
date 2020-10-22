@@ -27,7 +27,6 @@ module.exports = function (app) {
 
 
                 res.render("index", headerData)
-                // console.log(headerData.navArtists.Artist)
             })
 
         })
@@ -78,7 +77,6 @@ module.exports = function (app) {
 
 
                         res.render("collections", collectionsData);
-                        console.log(collectionsData.collArtwork.Artwork);
                     })
                 })
             })
@@ -125,7 +123,6 @@ module.exports = function (app) {
                         }
 
                         res.render("artists", artistData);
-                        console.log(artistData.artistHeader)
                     })
                 })
             })
@@ -160,7 +157,6 @@ module.exports = function (app) {
                     }
 
                     res.render("exhibition", headerData)
-                    console.log(headerData.exhibitData.Exhibit)
                 });
             });
         });
@@ -187,7 +183,6 @@ module.exports = function (app) {
 
 
                 res.render("about", headerData)
-                // console.log(headerData.navArtists.Artist)
             })
         })
     });
@@ -209,7 +204,6 @@ module.exports = function (app) {
                     navStyles: styleObj,
                     navArtists: artistObj
                 }
-
 
                 res.render("cplogged", headerData)
             })

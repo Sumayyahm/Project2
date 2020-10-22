@@ -1,9 +1,9 @@
-
 $(function () {
     
+
+
     $(".collection").on("click", function (event) {
         var styleName = $(this).data("target");
-        console.log(styleName);
         window.location.href = "/collection/" + styleName
     });
 
@@ -28,10 +28,58 @@ $(function () {
 
         $.post("/api/artist", newArtist)
             .then(function (data) {
-                console.log("added following artist", data);
+                location.reload()
+                alert(newArtist.artist_name + ' was added!')
 
-            });
+            })
+            .catch(function(err){
+
+                console.log(err)
+            })
     })
 
-    // $(".")
+    $(".style-submit").on("click", function(){
+
+        event.preventDefault();
+        event.stopPropagation();
+        
+        var newStyle = {
+            style_name: $(".stylename-input").val().trim()
+        }
+
+        $.post("/api/style", newStyle)
+            .then(function(data){
+                location.reload()
+                alert(newStyle.style_name + ' was added!')
+            })
+            .catch(function(err){
+
+                console.log(err)
+            })
+    })
+    
+
+    $(".event-submit").on("click", function(){
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        var newExhibit = {
+            exhibit_name: $(".eventname-input").val().trim(),
+            date: $(".eventdate-input").val().trim(),
+            time: $(".eventtime-input").val().trim(),
+            exhibit_descript: $(".eventdescription-input").val().trim(),
+            exhibit_address: $(".eventaddress-input").val().trim()
+        }
+
+        $.post("/api/exhibit", newExhibit)
+            .then(function(data){
+                location.reload()
+                alert(newExhibit.exhibit_name + ' was added!')
+            })
+            .catch(function(err){
+
+                console.log(err)
+            })
+    })
 });
