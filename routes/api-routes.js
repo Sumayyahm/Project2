@@ -11,22 +11,24 @@ module.exports = function (app) {
   });
   app.post("/api/signup", function (req, res) {
 
-    var Users = db.User.findAll({})
-    if (Users) {
-      return
-    } else {
-      db.User.create({
-        email: req.body.email,
-        password: req.body.password
-      })
-        .then(function () {
-          res.redirect(307, "/");
+    db.User.findAll({}).then(function (data) {
+      if (data.length != 0) {
+        console.log(data)
+        return
+      } else {
+        db.User.create({
+          email: req.body.email,
+          password: req.body.password
         })
-        .catch(function (err) {
-          console.log(err)
-          res.status(401).json(err);
-        });
-    }
+          .then(function () {
+            res.redirect(307, "/");
+          })
+          .catch(function (err) {
+            console.log(err)
+            res.status(401).json(err);
+          });
+      }
+    })
   });
 
   // Route for logging user out
