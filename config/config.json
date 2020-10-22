@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "M@d0wellke",
+    "password": "Pookie_25?!",
     "database": "gallery_db",
     "host": "127.0.0.1",
     "port": 3306,
@@ -16,11 +16,6 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "gallery_db",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+    "use_env_variable":"DATABASE_URL"
   }
 }
