@@ -34,11 +34,11 @@ $(document).ready(function() {
           window.location.replace("/manager");
           // If there's an error, handle it by throwing up a bootstrap alert
         })
-        .catch(handleLoginErr)
+        .catch(function(){
+
+          alert("Please use existing login credentials for user")
+        })
     }
   
-    function handleLoginErr(err) {
-      $("#alert .msg").text(err.responseJSON);
-      $("#alert").fadeIn(500);
-    }
+  
   });
