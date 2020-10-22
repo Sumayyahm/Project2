@@ -49,7 +49,12 @@ These forms allow the gallery owner can customize what styles of painting they h
 
 # Future-Development
 
-What's most exciting about this application is the future possibilities are endless. We are looking forward to adding a direct marketing system that will work with the database information to pinpoint interested buyers from our existing customer list. By entering specific details about the available artwork and our customers' interest, we plan to add an alert system that will notify the gallery owner that they match in sales once the appropriate criteria is made. They will then have a feature where they can select an artist or artwork, and an automatic marketing email will be created and sent to the customer. 
+What's most exciting about this application is the future possibilities are endless. We are looking forward to adding a direct marketing system that will work with the database information to pinpoint interested buyers from our existing customer list. 
+
+  ![userpage](public/images/readme/esthete-login-1.jpg)
+
+
+By entering specific details about the available artwork and our customers' interest, we plan to add an alert system that will notify the gallery owner that they match in sales once the appropriate criteria is made. They will then have a feature where they can select an artist or artwork, and an automatic marketing email will be created and sent to the customer. 
 
 # Contributors 
 
@@ -61,7 +66,7 @@ If installed locally, this app can run through node and will require an npm inst
 
 # Important Links
 
-Video Walkthrough: 
+Video Walkthrough: https://drive.google.com/file/d/1acroPcImHTuySFs7bU-tO9XBqeI8qcLL/view
 
 Heroku Deployment Link: https://esthetegallery.herokuapp.com/
 
